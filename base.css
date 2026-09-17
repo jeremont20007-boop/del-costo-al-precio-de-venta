@@ -1,0 +1,47 @@
+/* Estilos compartidos de las páginas secundarias (calculadora y legales). La landing tiene los suyos en línea. */
+:root{--bg:#0A1411;--bg2:#0E1B17;--card:#11221D;--line:#1F3630;--ink:#F2F6F3;--ink2:#A9B8B1;--ink3:#7E8E87;--fluo:#5EFFB2;--coral:#FF5C7A;--amar:#F5FF5C;
+  --f:"Fraunces",Georgia,serif;--s:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--m:"IBM Plex Mono",Consolas,monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--s);font-size:17px;line-height:1.6;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+a{color:var(--fluo)}
+:focus-visible{outline:2px solid var(--amar);outline-offset:3px;border-radius:4px}
+.wrap{max-width:860px;margin:0 auto;padding-inline:clamp(18px,4vw,40px)}
+.wrap.ancho{max-width:1120px}
+header.nav{position:sticky;top:0;z-index:20;background:rgba(10,20,17,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.brand{font-family:var(--f);font-weight:700;font-size:18px;color:var(--ink);text-decoration:none}
+.brand small{display:block;font-family:var(--m);font-weight:400;font-size:10.5px;letter-spacing:.14em;color:var(--ink3);text-transform:uppercase}
+main{padding-block:clamp(36px,6vw,72px)}
+h1,h2,h3{font-family:var(--f);font-weight:700;line-height:1.08;text-wrap:balance;letter-spacing:-.015em;margin:0}
+h1{font-size:clamp(34px,5vw,54px);font-weight:900}
+h1 em,h2 em{font-style:normal;color:var(--fluo)}
+h2{font-size:clamp(24px,3vw,32px);margin-top:38px}
+h3{font-size:19px;margin-top:22px}
+p,li{color:var(--ink2);max-width:68ch}
+p{margin:10px 0}
+b,strong{color:var(--ink);font-weight:600}
+.eyebrow{font-family:var(--m);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--fluo)}
+.btn{white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--fluo);color:#0A1411;font-weight:600;font-size:16px;border:0;border-radius:8px;padding:13px 20px;text-decoration:none;cursor:pointer;box-shadow:0 0 30px rgba(94,255,178,.25);transition:background .15s,transform .15s}
+.btn:hover{background:#8AFFC8;transform:translateY(-1px)}
+.btn.sm{font-size:14px;padding:9px 14px}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);box-shadow:none}
+.btn.ghost:hover{border-color:var(--fluo);color:var(--fluo);background:transparent}
+.btn.wa{background:#25D366;box-shadow:0 0 30px rgba(37,211,102,.25)}
+.btn.wa:hover{background:#4BE083}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-top:18px}
+.nota{background:var(--bg2);border-left:3px solid var(--fluo);border-radius:0 10px 10px 0;padding:12px 16px;margin:16px 0;color:var(--ink2);font-size:15.5px}
+.campos{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px 16px}
+.campos label{display:flex;flex-direction:column;gap:5px;font-family:var(--m);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)}
+.campos input{font:inherit;font-family:var(--m);font-size:17px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px;width:100%}
+.campos input:focus{border-color:var(--fluo);outline:none}
+.res{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:14px}
+.r{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.r .k{font-family:var(--m);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3)}
+.r .v{font-family:var(--f);font-weight:900;font-size:clamp(26px,4vw,38px);line-height:1.05;color:var(--ink)}
+.r.si .v{color:var(--fluo)}.r.no .v{color:var(--coral)}.r.pe .v{color:var(--amar)}
+.r .s{font-size:13px;color:var(--ink3)}
+.acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px;align-items:center}
+.legal{font-size:13px;color:var(--ink3);max-width:70ch}
+footer{border-top:1px solid var(--line);padding-block:26px 40px;color:var(--ink3);font-size:13.5px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:space-between}
+footer a{color:var(--ink2)}

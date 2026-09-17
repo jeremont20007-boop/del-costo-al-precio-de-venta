@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora de precio de venta · gratis</title>
+<meta name="description" content="Calculá gratis el precio de venta correcto, tu margen real y tu punto de equilibrio. Para almacenes, kioscos y minimercados.">
+<meta property="og:title" content="Calculadora de precio de venta · gratis">
+<meta property="og:description" content="Costo, margen objetivo y precio correcto en diez segundos. Más tu punto de equilibrio por día.">
+<meta property="og:image" content="https://jeremont20007-boop.github.io/del-costo-al-precio-de-venta/og.png">
+<meta name="theme-color" content="#0A1411">
+<link rel="canonical" href="https://jeremont20007-boop.github.io/del-costo-al-precio-de-venta/calculadora/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230A1411'/%3E%3Cpath d='M8 52 L56 14' stroke='%235EFFB2' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M8 40 L56 24' stroke='%23FF5C7A' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='36' cy='30' r='6' fill='%23F5FF5C'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../base.css">
+</head>
+<body>
+<header class="nav"><div class="wrap ancho">
+  <a class="brand" href="../">Montenegro &amp; Asociados<small>Del Costo al Precio de Venta</small></a>
+  <a class="btn sm" href="../#comprar" data-libro>Ver el libro →</a>
+</div></header>
+
+<main><div class="wrap ancho">
+  <div class="eyebrow">Herramienta gratuita</div>
+  <h1 style="margin-top:12px">Calculadora de <em>precio de venta</em></h1>
+  <p style="font-size:19px">Poné tu costo y el margen que querés ganar. Te da el precio correcto y te muestra cuánto perdés si "le agregás un porcentaje" a ojo.</p>
+
+  <section class="card" aria-labelledby="t1">
+    <h2 id="t1" style="margin-top:0">1 · El precio correcto de un producto</h2>
+    <div class="campos" style="margin-top:14px">
+      <label>Costo de factura ($)<input id="costo" inputmode="numeric" value="3.352"></label>
+      <label>Flete, manipuleo y merma ($)<input id="extra" inputmode="numeric" value="400"></label>
+      <label>Margen que querés ganar (%)<input id="margen" inputmode="decimal" value="30"></label>
+      <label>Tu precio actual ($, opcional)<input id="actual" inputmode="numeric" placeholder="4.878"></label>
+    </div>
+    <div class="res">
+      <div class="r"><div class="k">Costo real</div><div class="v" id="oCosto">–</div></div>
+      <div class="r no"><div class="k">Si "le agregás" ese %</div><div class="v" id="oOjo">–</div><div class="s" id="oOjoS"></div></div>
+      <div class="r si"><div class="k">Precio calculado</div><div class="v" id="oPrecio">–</div><div class="s">deja exactamente tu margen</div></div>
+      <div class="r pe"><div class="k">Plata que dejás en la góndola</div><div class="v" id="oDif">–</div><div class="s">por unidad</div></div>
+    </div>
+    <p id="oActual" class="legal" style="margin-top:12px"></p>
+  </section>
+
+  <section class="card" aria-labelledby="t2">
+    <h2 id="t2" style="margin-top:0">2 · Tu punto de equilibrio</h2>
+    <p>Cuánto tenés que vender por mes y por día solo para no perder plata.</p>
+    <div class="campos">
+      <label>Costos fijos del mes ($)<input id="cf" inputmode="numeric" value="1.200.000"></label>
+      <label>Margen real promedio (%)<input id="mg" inputmode="decimal" value="30"></label>
+      <label>Días que abrís por mes<input id="dias" inputmode="numeric" value="26"></label>
+      <label>Ticket promedio ($)<input id="tk" inputmode="numeric" value="3.500"></label>
+    </div>
+    <div class="res">
+      <div class="r pe"><div class="k">Equilibrio mensual</div><div class="v" id="oPE">–</div></div>
+      <div class="r"><div class="k">Equilibrio por día</div><div class="v" id="oDia">–</div></div>
+      <div class="r"><div class="k">Ventas por día</div><div class="v" id="oTk">–</div><div class="s">tickets solo para empatar</div></div>
+    </div>
+  </section>
+
+  <section class="card" style="border-color:rgba(94,255,178,.35)">
+    <div class="eyebrow">El método completo</div>
+    <h2 style="margin-top:8px">Esto son dos de las <em>veinte calculadoras</em> del libro</h2>
+    <p>"Del Costo al Precio de Venta" suma meta de ganancia, recuperación de la inversión, tablero mensual, simulador de rentabilidad, promociones que no destruyen margen y un plan de 30 días. Todo se recalcula con tus números.</p>
+    <div class="acciones">
+      <a class="btn" href="../#comprar" data-libro>Quiero el libro · USD 10 →</a>
+      <a class="btn wa" id="wa" href="#" target="_blank" rel="noopener">Pedir gratis el cartel de la caja</a>
+    </div>
+    <p class="legal" id="waLegal">Te lo mandamos por WhatsApp. Al escribirnos aceptás que te contactemos por ese medio con material del libro; podés pedir la baja cuando quieras. <a href="../privacidad.html">Política de privacidad</a>.</p>
+  </section>
+</div></main>
+
+<footer><div class="wrap ancho">
+  <span>Montenegro &amp; Asociados · Neuquén, Argentina</span>
+  <span><a href="../">El libro</a> · <a href="../arrepentimiento.html">Botón de arrepentimiento</a> · <a href="../privacidad.html">Privacidad</a> · <a href="../terminos.html">Términos</a></span>
+</div></footer>
+
+<script src="../config.js"></script>
+<script>
+(function(){
+  const C = window.CONFIG || {};
+  const $ = id => document.getElementById(id);
+  const num = v => { const s = String(v||'').replace(/\$/g,'').replace(/\s/g,'').replace(/\./g,'').replace(',', '.'); const n = Number(s); return s === '' || !isFinite(n) ? NaN : n; };
+  const peso = n => isNaN(n) || !isFinite(n) ? '–' : '$ ' + Math.round(n).toLocaleString('es-AR');
+  const pct = n => isNaN(n) ? '–' : n.toLocaleString('es-AR', {minimumFractionDigits:1, maximumFractionDigits:1}) + ' %';
+  function precio(){
+    const c = num($('costo').value) + (num($('extra').value) || 0), m = num($('margen').value)/100, a = num($('actual').value);
+    const ojo = c*(1+m), ok = c/(1-m);
+    $('oCosto').textContent = peso(c); $('oOjo').textContent = peso(ojo); $('oOjoS').textContent = isNaN(m) ? '' : 'margen real: ' + pct(100*m/(1+m));
+    $('oPrecio').textContent = m >= 1 ? '–' : peso(ok); $('oDif').textContent = m >= 1 ? '–' : peso(ok - ojo);
+    $('oActual').textContent = isNaN(a) || !a ? '' : (a < ok ? 'Con tu precio actual de ' + peso(a) + ' tu margen real es ' + pct(100*(a-c)/a) + ': estás ' + peso(ok - a) + ' por debajo del precio que deja ' + pct(m*100) + '.' : 'Con tu precio actual de ' + peso(a) + ' tu margen real es ' + pct(100*(a-c)/a) + ': estás en el objetivo o por encima.');
+  }
+  function equilibrio(){
+    const cf = num($('cf').value), mg = num($('mg').value)/100, d = num($('dias').value), t = num($('tk').value);
+    const pe = cf/mg; $('oPE').textContent = peso(pe); $('oDia').textContent = peso(pe/d); const n = pe/d/t; $('oTk').textContent = isNaN(n) || !isFinite(n) ? '–' : Math.ceil(n).toLocaleString('es-AR');
+  }
+  ['costo','extra','margen','actual'].forEach(i => $(i).addEventListener('input', precio));
+  ['cf','mg','dias','tk'].forEach(i => $(i).addEventListener('input', equilibrio));
+  precio(); equilibrio();
+  // UTM hacia la landing
+  const q = location.search; document.querySelectorAll('[data-libro]').forEach(a => { if (q) a.href = '../' + q + '#comprar'; });
+  // WhatsApp de captación
+  const wa = $('wa');
+  if (C.leadWhatsApp) { wa.href = 'https://wa.me/' + C.leadWhatsApp + '?text=' + encodeURIComponent(C.leadMensaje || 'Hola, quiero el cartel de la caja gratis.'); wa.addEventListener('click', () => { try { if (window.fbq) fbq('track','Lead'); if (window.ttq) ttq.track('SubmitForm'); } catch(e){} }); }
+  else { wa.hidden = true; $('waLegal').hidden = true; }
+})();
+</script>
+</body>
+</html>

@@ -135,6 +135,7 @@ footer a{color:var(--ink2)}
 .barra .p small{font-family:var(--m);font-weight:400;font-size:12px;color:var(--coral);text-decoration:line-through;margin-left:8px}
 .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
 .reveal.in{opacity:1;transform:none}
+@media (max-width:1140px){nav.links{display:none}header.nav .btn{margin-left:auto}}
 @media (max-width:860px){
   .hero .grid{grid-template-columns:1fr}
   nav.links{display:none}
@@ -148,7 +149,7 @@ footer a{color:var(--ink2)}
 
 <header class="nav"><div class="wrap">
   <a class="brand" href="#top">Montenegro &amp; Asociados<small>Estudio contable · Neuquén</small></a>
-  <nav class="links" aria-label="Secciones"><a href="#calculadora">Calculadora</a><a href="#aprender">Qué aprendés</a><a href="#indice">Índice</a><a href="#ticket">Ticket real</a><a href="#autor">El autor</a><a href="#faq">Preguntas</a></nav>
+  <nav class="links" aria-label="Secciones"><a href="calculadora/" data-utm>Calculadora gratis</a><a href="#calculadora">El error del 40 %</a><a href="#aprender">Qué aprendés</a><a href="#indice">Índice</a><a href="#ticket">Ticket real</a><a href="#autor">El autor</a><a href="#faq">Preguntas</a></nav>
   <a class="btn sm" data-buy="hotmart" href="#comprar">Comprar · USD <span data-precio>10</span></a>
 </div></header>
 
@@ -163,7 +164,8 @@ footer a{color:var(--ink2)}
       <span class="muted">Antes <span class="tachado">USD <span data-tachado>24</span></span> <span class="chip">−58 %</span></span>
     </div>
     <div class="garantias"><span>Pago único</span><span>Acceso inmediato</span><span>7 días de garantía</span></div>
-    <p class="urgencia">Precio de lanzamiento por tiempo limitado. Después vuelve a USD <span data-tachado>24</span>.</p>
+    <p class="urgencia">Precio de lanzamiento por tiempo limitado. Después vuelve a USD <span data-tachado>24</span>. <span id="pesos">El precio final en pesos se muestra en el checkout, antes de pagar.</span></p>
+    <p class="urgencia"><a href="arrepentimiento.html">Botón de arrepentimiento</a> · <a href="terminos.html">Términos y condiciones</a></p>
   </div>
   <div class="panel" aria-hidden="false">
     <div class="cab"><span>Ingresos vs. costos del mes</span><b>PE = costos fijos ÷ margen</b></div>
@@ -266,11 +268,11 @@ footer a{color:var(--ink2)}
 </div></section>
 
 <section id="comunidad"><div class="wrap">
-  <div class="eyebrow reveal">Incluida con tu compra</div>
+  <div class="eyebrow reveal">Gratuita y abierta</div>
   <h2 class="reveal" style="margin-top:10px">Comunidad de Emprendedores <em>Montenegro &amp; Asociados</em></h2>
-  <p class="muted reveal">Un espacio por WhatsApp para que el aprendizaje no termine en la última página.</p>
+  <p class="muted reveal">Un espacio gratuito por WhatsApp para comerciantes y emprendedores. No hace falta comprar el libro para participar.</p>
   <ul class="lista reveal"><li>Actualizaciones cuando cambien impuestos o escalas</li><li>Plantillas nuevas de costos, flujo de fondos y stock</li><li>Casos reales de comerciantes de la región</li><li>Encuentros periódicos y el "número de la semana"</li></ul>
-  <p class="muted reveal" id="comunidadTexto">El enlace de acceso a la comunidad llega en el mail de entrega del libro.</p>
+  <p class="muted reveal" id="comunidadTexto">Estamos abriendo la comunidad. Escribinos por WhatsApp y te sumamos apenas esté lista.</p>
   <p class="reveal"><a class="btn ghost" id="comunidadBtn" hidden target="_blank" rel="noopener">Entrar a la comunidad</a></p>
 </div></section>
 
@@ -280,6 +282,20 @@ footer a{color:var(--ink2)}
   <div class="partes" id="testimoniosGrid"></div>
 </div></section>
 
+<section id="gratis"><div class="wrap dos">
+  <div class="reveal">
+    <div class="eyebrow">Probalo gratis</div>
+    <h2 style="margin-top:10px">¿Todavía no comprás? Llevate la <em>calculadora</em></h2>
+    <p class="muted">Poné tu costo y el margen que querés ganar: te da el precio correcto y tu punto de equilibrio por día. Sin registrarte.</p>
+    <p class="muted">Y si nos escribís por WhatsApp, te mandamos gratis el <b style="color:var(--ink)">cartel de la caja</b> para imprimir con tu meta diaria.</p>
+  </div>
+  <div class="calc reveal" style="display:flex;flex-direction:column;gap:12px">
+    <a class="btn" href="calculadora/" data-utm>Abrir la calculadora gratis →</a>
+    <a class="btn ghost" id="waLead" href="#" target="_blank" rel="noopener">Pedir el cartel de la caja por WhatsApp</a>
+    <p class="urgencia" id="waLeadLegal" style="margin:0">Al escribirnos aceptás que te contactemos por WhatsApp con material del libro. Podés pedir la baja cuando quieras. <a href="privacidad.html">Privacidad</a>.</p>
+  </div>
+</div></section>
+
 <section id="comprar"><div class="wrap">
   <div style="text-align:center"><div class="eyebrow reveal">Precio de lanzamiento</div><h2 class="reveal" style="margin-top:10px">Todo el método, <em>por lo que cuesta un almuerzo</em></h2></div>
   <div class="oferta reveal">
@@ -287,7 +303,7 @@ footer a{color:var(--ink2)}
     <div class="precio"><small>USD</small><span data-precio>10</span></div>
     <div class="garantias"><span>Pago único</span><span>Acceso inmediato</span><span>Actualizaciones gratis</span><span>7 días de garantía</span></div>
     <div class="botones"><a class="btn" data-buy="hotmart" href="#" target="_blank" rel="noopener">Comprar en Hotmart →</a><a class="btn ghost" data-buy="shopify" href="#" target="_blank" rel="noopener">Comprar en la tienda</a></div>
-    <p class="urgencia" style="margin-bottom:0">PDF de 40 páginas + versión interactiva + comunidad. Si en 7 días no te sirve, te devolvemos el dinero.</p>
+    <p class="urgencia" style="margin-bottom:0">PDF de 40 páginas + versión interactiva con 20 calculadoras. Si en <span data-garantia>7</span> días no te sirve, te devolvemos el dinero.</p>
   </div>
 </div></section>
 
@@ -297,32 +313,23 @@ footer a{color:var(--ink2)}
   <details><summary>¿Sirve si no sé nada de contabilidad?</summary><p>Sí. Está escrito para comerciantes, no para contadores. Hace falta orden, una calculadora y ganas de mirar los números de frente. Cada fórmula viene con un ejemplo y con la calculadora lista.</p></details>
   <details><summary>¿En qué formato lo recibo?</summary><p>Un PDF de 40 páginas que podés leer en el celular o imprimir, y una versión interactiva que abre en cualquier navegador, sin instalar nada, donde cargás tus números y el libro se recalcula entero.</p></details>
   <details><summary>¿Sirve para kiosco, almacén o minimercado?</summary><p>Para eso fue escrito. Los casos son de comercios de barrio de Neuquén: gaseosas, fiambres, golosinas, productos de limpieza. También sirve para cualquier negocio que compra y revende.</p></details>
-  <details><summary>¿Cómo entro a la comunidad?</summary><p>Con el mail de entrega del libro recibís el enlace de invitación al grupo de WhatsApp de la Comunidad de Emprendedores Montenegro &amp; Asociados.</p></details>
+  <details><summary>¿La comunidad tiene costo?</summary><p>No. La Comunidad de Emprendedores Montenegro &amp; Asociados es gratuita y abierta a cualquier comerciante, haya comprado o no el libro.</p></details>
   <details><summary>¿Puedo pedir factura?</summary><p>Sí. La plataforma de pago emite el comprobante de la compra. Si necesitás factura a nombre de tu negocio, escribinos desde www.myaestudio.com después de comprar.</p></details>
   <details><summary>¿Qué pasa si no me sirve?</summary><p>Tenés 7 días de garantía. Si no era lo que esperabas, pedís el reembolso desde la misma plataforma y se te devuelve el total.</p></details>
 </div></section>
 </main>
 
 <footer><div class="wrap">
-  <span>Montenegro &amp; Asociados · Neuquén, Argentina · <a href="https://www.myaestudio.com" target="_blank" rel="noopener">www.myaestudio.com</a></span>
+  <span>Vende: Jeremías Emanuel Montenegro · CUIT 20-31203392-6 · IVA Responsable Inscripto · Neuquén Capital, Argentina · <a href="https://www.myaestudio.com" target="_blank" rel="noopener">www.myaestudio.com</a></span>
+  <span><a href="arrepentimiento.html">Botón de arrepentimiento</a> · <a href="terminos.html">Términos</a> · <a href="privacidad.html">Privacidad</a> · <a href="calculadora/">Calculadora gratis</a></span>
   <span>© 2026 Jeremías Emanuel Montenegro. Material educativo: no reemplaza el asesoramiento profesional personalizado.</span>
 </div></footer>
 
 <div class="barra" role="region" aria-label="Comprar"><div class="p">USD <span data-precio>10</span><small>USD <span data-tachado>24</span></small></div><a class="btn sm" data-buy="hotmart" href="#" target="_blank" rel="noopener">Comprar ahora →</a></div>
 
+<script src="config.js"></script>
 <script>
-/* ============ CONFIGURACIÓN (lo único que hay que tocar) ============ */
-const CONFIG = {
-  precio: "10", precioTachado: "24",
-  hotmartUrl: "https://pay.hotmart.com/P106495888C",
-  shopifyUrl: "https://xr5bbp-zn.myshopify.com/products/de-la-inversion-a-la-ganancia-ebook-digital",
-  communityWhatsAppUrl: "",      // enlace de invitación a la comunidad; vacío = no muestra botón
-  metaPixelId: "",               // ID de Meta Pixel (15 dígitos); vacío = no carga nada
-  tiktokPixelId: "",             // ID de TikTok Pixel; vacío = no carga nada
-  showTestimonials: false,       // pasar a true cuando haya testimonios reales
-  testimonials: []               // [{nombre:"", rubro:"", ciudad:"", frase:""}]
-};
-/* =================================================================== */
+const CONFIG = window.CONFIG;
 (function(){
   document.querySelectorAll('[data-precio]').forEach(e => e.textContent = CONFIG.precio);
   document.querySelectorAll('[data-tachado]').forEach(e => e.textContent = CONFIG.precioTachado);
@@ -335,14 +342,17 @@ const CONFIG = {
     a.href = url; a.addEventListener('click', () => track('InitiateCheckout', {destino: tipo}));
   });
   // píxeles (solo si hay ID)
-  function track(ev, data){ try { if (window.fbq) fbq('track', ev, Object.assign({content_name:'Del Costo al Precio de Venta', value: Number(CONFIG.precio), currency:'USD'}, data||{})); if (window.ttq) ttq.track(ev, {content_name:'Del Costo al Precio de Venta', value: Number(CONFIG.precio), currency:'USD'}); } catch(e){} }
-  if (CONFIG.metaPixelId) { !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init', CONFIG.metaPixelId); fbq('track','PageView'); }
-  if (CONFIG.tiktokPixelId) { !function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.load=function(e){var n="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{};ttq._i[e]=[];ttq._i[e]._u=n;var o=d.createElement("script");o.type="text/javascript";o.async=!0;o.src=n+"?sdkid="+e+"&lib="+t;var a=d.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};ttq.load(CONFIG.tiktokPixelId);ttq.page();}(window,document,'ttq'); }
+  const track = window.track;
   track('ViewContent');
   // comunidad
-  if (CONFIG.communityWhatsAppUrl) { const b = document.getElementById('comunidadBtn'); b.href = CONFIG.communityWhatsAppUrl; b.hidden = false; document.getElementById('comunidadTexto').textContent = 'Con tu compra recibís acceso. Si ya compraste, entrá desde acá:'; }
+  if (CONFIG.communityWhatsAppUrl) { const b = document.getElementById('comunidadBtn'); b.href = CONFIG.communityWhatsAppUrl; b.hidden = false; document.getElementById('comunidadTexto').textContent = 'Entrá gratis desde acá:'; }
   // testimonios
   if (CONFIG.showTestimonials && CONFIG.testimonials.length) { const s = document.getElementById('testimonios'), g = document.getElementById('testimoniosGrid'); CONFIG.testimonials.forEach(t => { const d = document.createElement('div'); d.className = 'parte'; const p = document.createElement('p'); p.textContent = '“' + t.frase + '”'; const n = document.createElement('p'); n.className = 'muted'; n.textContent = t.nombre + ' · ' + t.rubro + ' · ' + t.ciudad; d.append(p, n); g.appendChild(d); }); s.hidden = false; }
+  // precio en pesos, garantía, UTM hacia la calculadora y WhatsApp de captación
+  if (CONFIG.precioPesos) document.getElementById('pesos').textContent = 'Precio final en pesos: $ ' + CONFIG.precioPesos + ' (impuestos incluidos).';
+  document.querySelectorAll('[data-garantia]').forEach(e => e.textContent = CONFIG.diasGarantia || '7');
+  if (location.search) document.querySelectorAll('[data-utm]').forEach(a => { a.href = a.getAttribute('href') + location.search; });
+  (function(){ const w = document.getElementById('waLead'); if (!w) return; if (CONFIG.leadWhatsApp) { w.href = 'https://wa.me/' + CONFIG.leadWhatsApp + '?text=' + encodeURIComponent('Hola, vengo de la página del libro. Quiero el cartel de la caja gratis.'); w.addEventListener('click', () => track('Lead')); } else { w.hidden = true; document.getElementById('waLeadLegal').hidden = true; } })();
   // calculadora
   const mk = document.getElementById('mk'), fmt = n => n.toLocaleString('es-AR', {minimumFractionDigits:1, maximumFractionDigits:1});
   function calc(){ const m = Number(mk.value)/100, real = m/(1+m); document.getElementById('mkv').textContent = mk.value + ' %'; document.getElementById('cree').textContent = mk.value + ' %'; document.getElementById('real').textContent = fmt(real*100) + ' %'; document.getElementById('lectura').textContent = 'De cada $ 1.000 que vendés, te quedan $ ' + Math.round(real*1000).toLocaleString('es-AR') + ' antes de pagar los gastos fijos. Creías que eran $ ' + Math.min(1000, Math.round(m*1000)).toLocaleString('es-AR') + '.'; }

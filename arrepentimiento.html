@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Botón de arrepentimiento · Del Costo al Precio de Venta</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0A1411">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="base.css">
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="./">Montenegro &amp; Asociados<small>Del Costo al Precio de Venta</small></a>
+  <a class="btn sm ghost" href="./">Volver al libro</a>
+</div></header>
+<main><div class="wrap">
+  <div class="eyebrow">Ley 24.240 · Res. 424/2020</div>
+  <h1 style="margin-top:12px">Botón de <em>arrepentimiento</em></h1>
+  <p style="font-size:19px">Si compraste el libro y querés revocar la compra, podés hacerlo dentro de los <b>10 días corridos</b> desde que lo recibiste, sin dar motivos y sin ningún costo.</p>
+
+  <div class="card">
+    <h2 style="margin-top:0">Cómo pedirlo</h2>
+    <ol>
+      <li><b>Escribinos</b> con tu nombre, el mail con el que compraste y la fecha de compra.</li>
+      <li>Dentro de las 24 horas hábiles te respondemos con el <b>código de trámite</b> de tu solicitud.</li>
+      <li>El reintegro se hace por el mismo medio de pago, a través de la plataforma donde compraste (Hotmart o la tienda).</li>
+    </ol>
+    <div class="acciones">
+      <a class="btn wa" id="waRev" href="#" target="_blank" rel="noopener">Solicitar la revocación por WhatsApp</a>
+      <a class="btn ghost" id="mailRev" href="#" hidden>Solicitarla por mail</a>
+    </div>
+    <p class="legal">También podés pedir el reembolso directamente desde el mail de confirmación de Hotmart, con la opción de reembolso, durante el plazo de garantía de la plataforma.</p>
+  </div>
+
+  <h2>Quién vende</h2>
+  <p><b>Jeremías Emanuel Montenegro</b> · CUIT 20-31203392-6 · IVA Responsable Inscripto · Neuquén Capital, Provincia del Neuquén, Argentina. Nombre comercial: Montenegro &amp; Asociados.</p>
+  <p class="legal">El derecho de revocación surge del artículo 34 de la Ley 24.240 de Defensa del Consumidor y del artículo 1110 del Código Civil y Comercial. Este botón cumple con la Resolución 424/2020 de la Secretaría de Comercio Interior.</p>
+</div></main>
+<footer><div class="wrap"><span>Montenegro &amp; Asociados · Neuquén, Argentina</span><span><a href="./">El libro</a> · <a href="privacidad.html">Privacidad</a> · <a href="terminos.html">Términos</a></span></div></footer>
+<script src="config.js"></script>
+<script>
+(function(){ var C = window.CONFIG || {}, t = 'Hola, quiero revocar mi compra del libro "Del Costo al Precio de Venta". Nombre: ___ · Mail de compra: ___ · Fecha de compra: ___';
+  var w = document.getElementById('waRev'); if (C.leadWhatsApp) w.href = 'https://wa.me/' + C.leadWhatsApp + '?text=' + encodeURIComponent(t); else { w.href = 'https://www.myaestudio.com'; w.textContent = 'Solicitarla desde www.myaestudio.com'; w.classList.remove('wa'); }
+  var m = document.getElementById('mailRev'); if (C.contactoEmail) { m.href = 'mailto:' + C.contactoEmail + '?subject=' + encodeURIComponent('Revocación de compra') + '&body=' + encodeURIComponent(t); m.hidden = false; }
+})();
+</script>
+</body>
+</html>
