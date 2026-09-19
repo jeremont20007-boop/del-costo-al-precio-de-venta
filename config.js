@@ -5,7 +5,7 @@ window.CONFIG = {
   // Oferta
   precio: "10",                 // USD
   precioTachado: "24",          // USD
-  precioPesos: "",              // precio final en pesos que muestra el checkout (ej. "14.900"); vacío = texto genérico
+  precioPesos: "17.489",              // precio final en pesos que muestra el checkout (ej. "14.900"); vacío = texto genérico
   diasGarantia: "7",
   // Checkouts
   hotmartUrl: "https://pay.hotmart.com/P106495888C",
