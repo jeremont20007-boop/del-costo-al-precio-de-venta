@@ -16,7 +16,7 @@ window.CONFIG = {
   contactoEmail: "",               // mail público para consultas y revocaciones; vacío = solo WhatsApp y web
   communityWhatsAppUrl: "",        // enlace de invitación a la comunidad; vacío = no muestra botón
   // Medición (vacío = no carga nada)
-  metaPixelId: "",
+  metaPixelId: "1944695516199310",
   tiktokPixelId: "",
   // Testimonios: solo reales
   showTestimonials: false,
