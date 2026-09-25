@@ -7,9 +7,10 @@ window.CONFIG = {
   precioTachado: "24",          // USD
   precioPesos: "17.489",              // precio final en pesos que muestra el checkout (ej. "14.900"); vacío = texto genérico
   diasGarantia: "7",
-  // Checkouts
+  // Checkouts: el botón principal va a Impultienda (compradores de Argentina, cobra por Mercado Pago); vacío = Hotmart
+  impultiendaUrl: "",
   hotmartUrl: "https://pay.hotmart.com/P106495888C",
-  shopifyUrl: "https://xr5bbp-zn.myshopify.com/products/de-la-inversion-a-la-ganancia-ebook-digital",
+  shopifyUrl: "https://xr5bbp-zn.myshopify.com/products/de-la-inversion-a-la-ganancia-ebook-digital",   // en pausa: ningún botón la usa
   // Captación y contacto
   leadWhatsApp: "5492995285513",   // WhatsApp del estudio (el publicado en myaestudio.com); vacío = oculta los botones
   leadMensaje: "Hola, vengo de la calculadora de precios. Quiero el cartel de la caja gratis.",

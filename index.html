@@ -150,7 +150,7 @@ footer a{color:var(--ink2)}
 <header class="nav"><div class="wrap">
   <a class="brand" href="#top">Montenegro &amp; Asociados<small>Estudio contable · Neuquén</small></a>
   <nav class="links" aria-label="Secciones"><a href="calculadora/" data-utm>Calculadora gratis</a><a href="#calculadora">El error del 40 %</a><a href="#aprender">Qué aprendés</a><a href="#indice">Índice</a><a href="#ticket">Ticket real</a><a href="#autor">El autor</a><a href="#faq">Preguntas</a></nav>
-  <a class="btn sm" data-buy="hotmart" href="#comprar">Comprar · USD <span data-precio>10</span></a>
+  <a class="btn sm" data-buy="principal" href="#comprar">Comprar · USD <span data-precio>10</span></a>
 </div></header>
 
 <main id="top">
@@ -160,7 +160,7 @@ footer a{color:var(--ink2)}
     <h1 style="margin-top:14px">Del Costo al <em>Precio de Venta</em></h1>
     <p class="sub">Cómo calcular tus costos, fijar precios que dejen ganancia y saber cuánto gana tu negocio.</p>
     <div class="precio-linea">
-      <a class="btn" data-buy="hotmart" href="#comprar">Quiero el libro · USD <span data-precio>10</span> →</a>
+      <a class="btn" data-buy="principal" href="#comprar">Quiero el libro · USD <span data-precio>10</span> →</a>
       <span class="muted">Antes <span class="tachado">USD <span data-tachado>24</span></span> <span class="chip">−58 %</span></span>
     </div>
     <div class="garantias"><span>Pago único</span><span>Acceso inmediato</span><span>7 días de garantía</span></div>
@@ -302,7 +302,7 @@ footer a{color:var(--ink2)}
     <div class="muted">Antes <span class="tachado">USD <span data-tachado>24</span></span></div>
     <div class="precio"><small>USD</small><span data-precio>10</span></div>
     <div class="garantias"><span>Pago único</span><span>Acceso inmediato</span><span>Actualizaciones gratis</span><span>7 días de garantía</span></div>
-    <div class="botones"><a class="btn" data-buy="hotmart" href="#" target="_blank" rel="noopener">Comprar en Hotmart →</a><a class="btn ghost" data-buy="shopify" href="#" target="_blank" rel="noopener">Comprar en la tienda</a></div>
+    <div class="botones"><a class="btn" data-buy="principal" href="#" target="_blank" rel="noopener">Comprar ahora →</a><a class="btn ghost" data-buy="hotmart" href="#" target="_blank" rel="noopener">Pago desde el exterior (Hotmart)</a></div>
     <p class="urgencia" style="margin-bottom:0">PDF de 40 páginas + versión interactiva con 20 calculadoras. Si en <span data-garantia>7</span> días no te sirve, te devolvemos el dinero.</p>
   </div>
 </div></section>
@@ -325,7 +325,7 @@ footer a{color:var(--ink2)}
   <span>© 2026 Jeremías Emanuel Montenegro. Material educativo: no reemplaza el asesoramiento profesional personalizado.</span>
 </div></footer>
 
-<div class="barra" role="region" aria-label="Comprar"><div class="p">USD <span data-precio>10</span><small>USD <span data-tachado>24</span></small></div><a class="btn sm" data-buy="hotmart" href="#" target="_blank" rel="noopener">Comprar ahora →</a></div>
+<div class="barra" role="region" aria-label="Comprar"><div class="p">USD <span data-precio>10</span><small>USD <span data-tachado>24</span></small></div><a class="btn sm" data-buy="principal" href="#" target="_blank" rel="noopener">Comprar ahora →</a></div>
 
 <script src="config.js"></script>
 <script>
@@ -337,7 +337,7 @@ const CONFIG = window.CONFIG;
   const q = new URLSearchParams(location.search), pasar = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','sck','src'];
   function conParams(base){ try { const u = new URL(base); pasar.forEach(k => { if (q.get(k)) u.searchParams.set(k, q.get(k)); }); if (!u.searchParams.get('sck') && q.get('utm_source')) u.searchParams.set('sck', [q.get('utm_source'), q.get('utm_campaign'), q.get('utm_content')].filter(Boolean).join('|')); return u.toString(); } catch(e){ return base; } }
   document.querySelectorAll('[data-buy]').forEach(a => {
-    const tipo = a.dataset.buy, url = conParams(tipo === 'shopify' ? CONFIG.shopifyUrl : CONFIG.hotmartUrl);
+    const tipo = a.dataset.buy, url = conParams({principal: CONFIG.impultiendaUrl || CONFIG.hotmartUrl, shopify: CONFIG.shopifyUrl}[tipo] || CONFIG.hotmartUrl);
     if (a.getAttribute('href') === '#comprar') { a.addEventListener('click', () => track('InitiateCheckout', {destino:'seccion'})); return; }
     a.href = url; a.addEventListener('click', () => track('InitiateCheckout', {destino: tipo}));
   });
