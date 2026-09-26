@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Del Costo al Precio de Venta · Guía práctica para comerciantes</title>
-<meta name="description" content="Cómo calcular tus costos, fijar precios que dejen ganancia y saber cuánto gana tu negocio. Ebook con calculadoras interactivas para almacenes, kioscos y minimercados. USD 10, pago único.">
+<meta name="description" content="Cómo calcular tus costos, fijar precios que dejen ganancia y saber cuánto gana tu negocio. Ebook con calculadoras interactivas para almacenes, kioscos y minimercados. Pago único, acceso inmediato.">
 <meta property="og:type" content="book">
 <meta property="og:title" content="Del Costo al Precio de Venta">
 <meta property="og:description" content="Le pusiste 40 % y ganás 28,6 %. La guía práctica para fijar precios que dejen ganancia. Con calculadoras interactivas.">
@@ -62,17 +62,10 @@ nav.links a:hover{color:var(--fluo)}
 .garantias{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:16px;font-size:14.5px;color:var(--ink2)}
 .garantias span::before{content:"✓ ";color:var(--fluo)}
 .urgencia{font-size:13.5px;color:var(--ink3);margin-top:10px}
-.panel{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:16px}
-.panel .cab{display:flex;justify-content:space-between;gap:10px;font-family:var(--m);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);margin-bottom:6px}
-.panel .cab b{color:var(--amar);font-weight:400;border:1px solid rgba(245,255,92,.4);border-radius:4px;padding:1px 6px}
-svg text{font-family:var(--m)}
-.linea{stroke-dasharray:1200;stroke-dashoffset:1200;animation:trazo 1.6s ease-out .2s forwards}
-.linea.b{animation-delay:.5s}
-@keyframes trazo{to{stroke-dashoffset:0}}
-.pe{opacity:0;animation:aparece .5s ease-out 1.7s forwards}
-@keyframes aparece{to{opacity:1}}
-.pulso{transform-origin:579px 307px;animation:pulso 2.4s ease-in-out 2.2s infinite}
-@keyframes pulso{0%,100%{transform:scale(1);opacity:.25}50%{transform:scale(1.5);opacity:.08}}
+.tapa{display:block;width:min(100%,380px);margin-inline:auto;border-radius:6px;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 60px rgba(94,255,178,.12);transform:rotate(-2deg)}
+.valor{list-style:none;padding:0;margin:18px auto 0;max-width:460px;text-align:left;font-size:15.5px}
+.valor li{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px dashed var(--line);color:var(--ink2)}
+.valor li b{font-family:var(--m);font-weight:400;color:var(--ink3)}
 /* error / calculadora */
 .dos{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,4vw,56px);align-items:center}
 .calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
@@ -140,6 +133,7 @@ footer a{color:var(--ink2)}
   .hero .grid{grid-template-columns:1fr}
   nav.links{display:none}
   .barra{display:flex}
+  header.nav .btn{display:none}
   .autor{grid-template-columns:1fr}
   header.nav .btn{margin-left:auto}
 }
@@ -150,45 +144,24 @@ footer a{color:var(--ink2)}
 <header class="nav"><div class="wrap">
   <a class="brand" href="#top">Montenegro &amp; Asociados<small>Estudio contable · Neuquén</small></a>
   <nav class="links" aria-label="Secciones"><a href="calculadora/" data-utm>Calculadora gratis</a><a href="#calculadora">El error del 40 %</a><a href="#aprender">Qué aprendés</a><a href="#indice">Índice</a><a href="#ticket">Ticket real</a><a href="#autor">El autor</a><a href="#faq">Preguntas</a></nav>
-  <a class="btn sm" data-buy="principal" href="#comprar">Comprar · USD <span data-precio>10</span></a>
+  <a class="btn sm" data-buy="principal" href="#comprar">Comprar · <span data-precio>USD 10</span></a>
 </div></header>
 
 <main id="top">
 <section class="hero"><div class="wrap grid">
   <div>
     <div class="eyebrow">Guía práctica para comerciantes · Edición 2026</div>
-    <h1 style="margin-top:14px">Del Costo al <em>Precio de Venta</em></h1>
-    <p class="sub">Cómo calcular tus costos, fijar precios que dejen ganancia y saber cuánto gana tu negocio.</p>
+    <h1 style="margin-top:14px">Le ponés 40 %.<br>Ganás <em>28,6 %</em>.</h1>
+    <p class="sub"><b style="color:var(--ink)">Del Costo al Precio de Venta</b> es la guía para calcular precios que dejen ganancia de verdad y saber cuánto vender por día para cubrir el mes. Con calculadoras que usan tus números.</p>
     <div class="precio-linea">
-      <a class="btn" data-buy="principal" href="#comprar">Quiero el libro · USD <span data-precio>10</span> →</a>
-      <span class="muted">Antes <span class="tachado">USD <span data-tachado>24</span></span> <span class="chip">−58 %</span></span>
+      <a class="btn" data-buy="principal" href="#comprar">Quiero el libro · <span data-precio>USD 10</span> →</a>
+      <span class="muted">Antes <span class="tachado"><span data-tachado>USD 24</span></span> <span class="chip">−58 %</span></span>
     </div>
     <div class="garantias"><span>Pago único</span><span>Acceso inmediato</span><span>7 días de garantía</span></div>
-    <p class="urgencia">Precio de lanzamiento por tiempo limitado. Después vuelve a USD <span data-tachado>24</span>. <span id="pesos">El precio final en pesos se muestra en el checkout, antes de pagar.</span></p>
+    <p class="urgencia">Precio de lanzamiento. Impuestos incluidos: lo que ves es lo que pagás.</p>
     <p class="urgencia"><a href="arrepentimiento.html">Botón de arrepentimiento</a> · <a href="terminos.html">Términos y condiciones</a></p>
   </div>
-  <div class="panel" aria-hidden="false">
-    <div class="cab"><span>Ingresos vs. costos del mes</span><b>PE = costos fijos ÷ margen</b></div>
-    <svg viewBox="0 0 1000 730" role="img" aria-label="La línea de ingresos y la de costos totales se cruzan en el punto de equilibrio de 4 millones de pesos">
-      <defs>
-        <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-        <linearGradient id="gGain" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5EFFB2" stop-opacity=".28"/><stop offset="1" stop-color="#5EFFB2" stop-opacity="0"/></linearGradient>
-        <linearGradient id="gLoss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF5C7A" stop-opacity=".26"/><stop offset="1" stop-color="#FF5C7A" stop-opacity="0"/></linearGradient>
-      </defs>
-      <g stroke="rgba(255,255,255,.07)" stroke-width="1.5"><line x1="90" y1="140" x2="970" y2="140"/><line x1="90" y1="240" x2="970" y2="240"/><line x1="90" y1="340" x2="970" y2="340"/><line x1="90" y1="440" x2="970" y2="440"/><line x1="310" y1="40" x2="310" y2="640"/><line x1="530" y1="40" x2="530" y2="640"/><line x1="750" y1="40" x2="750" y2="640"/></g>
-      <g fill="#7E8E87" font-size="22"><text x="78" y="148" text-anchor="end">6 M</text><text x="78" y="348" text-anchor="end">3,6 M</text><text x="78" y="548" text-anchor="end">1,2 M</text><text x="310" y="676" text-anchor="middle">1,8 M</text><text x="530" y="676" text-anchor="middle">3,6 M</text><text x="750" y="676" text-anchor="middle">5,4 M</text><text x="985" y="676" text-anchor="end">7,2 M</text><text x="970" y="716" text-anchor="end" letter-spacing="3">VENTAS DEL MES →</text></g>
-      <polygon points="90,540 579,307 90,640" fill="url(#gLoss)"/><polygon points="579,307 970,40 970,120" fill="url(#gGain)"/>
-      <line x1="90" y1="540" x2="970" y2="540" stroke="#FF5C7A" stroke-width="3" stroke-dasharray="10 10" opacity=".5"/>
-      <text x="960" y="530" fill="#FF9DB0" font-size="22" letter-spacing="2" text-anchor="end">COSTOS FIJOS $ 1,2 M</text>
-      <line class="linea" x1="90" y1="540" x2="970" y2="120" stroke="#FF5C7A" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
-      <line class="linea b" x1="90" y1="640" x2="970" y2="40" stroke="#5EFFB2" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
-      <text x="955" y="172" fill="#FF9DB0" font-size="22" letter-spacing="2" text-anchor="end">COSTOS TOTALES</text><text x="690" y="196" fill="#5EFFB2" font-size="22" letter-spacing="2" text-anchor="end">INGRESOS</text>
-      <text x="255" y="506" fill="#FF9DB0" font-size="24" font-weight="600" letter-spacing="3" text-anchor="middle">PÉRDIDA</text><text x="955" y="94" fill="#5EFFB2" font-size="22" font-weight="600" letter-spacing="3" text-anchor="end">GANANCIA</text>
-      <g class="pe"><line x1="579" y1="307" x2="579" y2="640" stroke="#F5FF5C" stroke-width="2" stroke-dasharray="6 8" opacity=".8"/><circle class="pulso" cx="579" cy="307" r="26" fill="#F5FF5C" opacity=".25"/><circle cx="579" cy="307" r="11" fill="#F5FF5C" filter="url(#glow)"/><circle cx="579" cy="307" r="4" fill="#0A1411"/>
-        <g font-size="24" fill="#F5FF5C" letter-spacing="2"><text x="556" y="262" text-anchor="end" font-weight="600">PUNTO DE EQUILIBRIO</text><text x="556" y="296" text-anchor="end" font-size="32" font-weight="700">$ 4.000.000</text></g></g>
-      <line x1="90" y1="640" x2="970" y2="640" stroke="rgba(255,255,255,.35)" stroke-width="2"/>
-    </svg>
-  </div>
+  <img class="tapa" src="tapa.jpg" width="640" height="1024" alt="Tapa del libro Del Costo al Precio de Venta: curva de ingresos y costos con el punto de equilibrio">
 </div></section>
 
 <section id="calculadora"><div class="wrap dos">
@@ -246,6 +219,7 @@ footer a{color:var(--ink2)}
     <h2 style="margin-top:10px">Adivinar vs. <em>calcular</em></h2>
     <p class="muted">Una gaseosa de 2 litros, con la factura real de un minimercado de Neuquén. Si "le agregás un 30 %", cobrás $ 4.878 y creés que ganás 30 %. El precio que de verdad deja 30 % es $ 5.360.</p>
     <p class="muted">Son <b style="color:var(--amar)">$ 482 por unidad</b> que quedan en la góndola. Multiplicalo por todo lo que vendés en un mes.</p>
+    <p style="margin-top:22px"><a class="btn" data-buy="principal" href="#comprar">Quiero calcular mis precios →</a></p>
   </div>
   <div class="ticket reveal" role="img" aria-label="Ticket con el cálculo del precio de venta">
     <div class="t">Montenegro &amp; Asociados<br>cálculo de precio</div>
@@ -299,11 +273,13 @@ footer a{color:var(--ink2)}
 <section id="comprar"><div class="wrap">
   <div style="text-align:center"><div class="eyebrow reveal">Precio de lanzamiento</div><h2 class="reveal" style="margin-top:10px">Todo el método, <em>por lo que cuesta un almuerzo</em></h2></div>
   <div class="oferta reveal">
-    <div class="muted">Antes <span class="tachado">USD <span data-tachado>24</span></span></div>
-    <div class="precio"><small>USD</small><span data-precio>10</span></div>
-    <div class="garantias"><span>Pago único</span><span>Acceso inmediato</span><span>Actualizaciones gratis</span><span>7 días de garantía</span></div>
+    <div class="muted">Antes <span class="tachado"><span data-tachado>USD 24</span></span></div>
+    <div class="precio"><span data-precio>USD 10</span></div>
+    <ul class="valor"><li>Libro PDF de 40 páginas, 14 capítulos <b>✓</b></li><li>Versión interactiva con 20 calculadoras <b>✓</b></li><li>Plan de 30 días y plantillas <b>✓</b></li><li>Cartel de la caja con tu meta diaria <b>✓</b></li><li>Actualizaciones cuando cambien impuestos <b>✓</b></li></ul>
+    <div class="garantias"><span>Pago único</span><span>Acceso inmediato</span><span>7 días de garantía</span></div>
     <div class="botones"><a class="btn" data-buy="principal" href="#" target="_blank" rel="noopener">Comprar ahora →</a><a class="btn ghost" data-buy="hotmart" href="#" target="_blank" rel="noopener">Pago desde el exterior (Hotmart)</a></div>
     <p class="urgencia" style="margin-bottom:0">PDF de 40 páginas + versión interactiva con 20 calculadoras. Si en <span data-garantia>7</span> días no te sirve, te devolvemos el dinero.</p>
+    <p class="urgencia" id="mpLinea" hidden>Pagás con Mercado Pago: tarjeta de crédito, débito o dinero en cuenta.</p>
   </div>
 </div></section>
 
@@ -312,6 +288,8 @@ footer a{color:var(--ink2)}
   <h2 class="reveal" style="margin-top:10px;margin-bottom:14px">Antes de <em>comprar</em></h2>
   <details><summary>¿Sirve si no sé nada de contabilidad?</summary><p>Sí. Está escrito para comerciantes, no para contadores. Hace falta orden, una calculadora y ganas de mirar los números de frente. Cada fórmula viene con un ejemplo y con la calculadora lista.</p></details>
   <details><summary>¿En qué formato lo recibo?</summary><p>Un PDF de 40 páginas que podés leer en el celular o imprimir, y una versión interactiva que abre en cualquier navegador, sin instalar nada, donde cargás tus números y el libro se recalcula entero.</p></details>
+  <details><summary>¿Cómo me llega?</summary><p>Apenas se acredita el pago te llega un mail con los enlaces de descarga. Si no lo ves en unos minutos, revisá spam o escribinos por WhatsApp.</p></details>
+  <details><summary>¿Cómo pago?</summary><p>Desde Argentina, en pesos y con impuestos incluidos. Desde otro país, con el botón "Pago desde el exterior", en tu moneda.</p></details>
   <details><summary>¿Sirve para kiosco, almacén o minimercado?</summary><p>Para eso fue escrito. Los casos son de comercios de barrio de Neuquén: gaseosas, fiambres, golosinas, productos de limpieza. También sirve para cualquier negocio que compra y revende.</p></details>
   <details><summary>¿La comunidad tiene costo?</summary><p>No. La Comunidad de Emprendedores Montenegro &amp; Asociados es gratuita y abierta a cualquier comerciante, haya comprado o no el libro.</p></details>
   <details><summary>¿Puedo pedir factura?</summary><p>Sí. La plataforma de pago emite el comprobante de la compra. Si necesitás factura a nombre de tu negocio, escribinos desde www.myaestudio.com después de comprar.</p></details>
@@ -325,14 +303,16 @@ footer a{color:var(--ink2)}
   <span>© 2026 Jeremías Emanuel Montenegro. Material educativo: no reemplaza el asesoramiento profesional personalizado.</span>
 </div></footer>
 
-<div class="barra" role="region" aria-label="Comprar"><div class="p">USD <span data-precio>10</span><small>USD <span data-tachado>24</span></small></div><a class="btn sm" data-buy="principal" href="#" target="_blank" rel="noopener">Comprar ahora →</a></div>
+<div class="barra" role="region" aria-label="Comprar"><div class="p"><span data-precio>USD 10</span><small><span data-tachado>USD 24</span></small></div><a class="btn sm" data-buy="principal" href="#" target="_blank" rel="noopener">Comprar ahora →</a></div>
 
 <script src="config.js"></script>
 <script>
 const CONFIG = window.CONFIG;
 (function(){
-  document.querySelectorAll('[data-precio]').forEach(e => e.textContent = CONFIG.precio);
-  document.querySelectorAll('[data-tachado]').forEach(e => e.textContent = CONFIG.precioTachado);
+  const pesos = !!CONFIG.precioPesos;
+  document.querySelectorAll('[data-precio]').forEach(e => e.textContent = pesos ? '$ ' + CONFIG.precioPesos : 'USD ' + CONFIG.precio);
+  document.querySelectorAll('[data-tachado]').forEach(e => e.textContent = pesos && CONFIG.precioPesosTachado ? '$ ' + CONFIG.precioPesosTachado : 'USD ' + CONFIG.precioTachado);
+  if (CONFIG.impultiendaUrl) document.getElementById('mpLinea').hidden = false;
   // UTM + sck hacia los checkouts
   const q = new URLSearchParams(location.search), pasar = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','sck','src'];
   function conParams(base){ try { const u = new URL(base); pasar.forEach(k => { if (q.get(k)) u.searchParams.set(k, q.get(k)); }); if (!u.searchParams.get('sck') && q.get('utm_source')) u.searchParams.set('sck', [q.get('utm_source'), q.get('utm_campaign'), q.get('utm_content')].filter(Boolean).join('|')); return u.toString(); } catch(e){ return base; } }
@@ -349,7 +329,6 @@ const CONFIG = window.CONFIG;
   // testimonios
   if (CONFIG.showTestimonials && CONFIG.testimonials.length) { const s = document.getElementById('testimonios'), g = document.getElementById('testimoniosGrid'); CONFIG.testimonials.forEach(t => { const d = document.createElement('div'); d.className = 'parte'; const p = document.createElement('p'); p.textContent = '“' + t.frase + '”'; const n = document.createElement('p'); n.className = 'muted'; n.textContent = t.nombre + ' · ' + t.rubro + ' · ' + t.ciudad; d.append(p, n); g.appendChild(d); }); s.hidden = false; }
   // precio en pesos, garantía, UTM hacia la calculadora y WhatsApp de captación
-  if (CONFIG.precioPesos) document.getElementById('pesos').textContent = 'Precio final en pesos: $ ' + CONFIG.precioPesos + ' (impuestos incluidos).';
   document.querySelectorAll('[data-garantia]').forEach(e => e.textContent = CONFIG.diasGarantia || '7');
   if (location.search) document.querySelectorAll('[data-utm]').forEach(a => { a.href = a.getAttribute('href') + location.search; });
   (function(){ const w = document.getElementById('waLead'); if (!w) return; if (CONFIG.leadWhatsApp) { w.href = 'https://wa.me/' + CONFIG.leadWhatsApp + '?text=' + encodeURIComponent('Hola, vengo de la página del libro. Quiero el cartel de la caja gratis.'); w.addEventListener('click', () => track('Lead')); } else { w.hidden = true; document.getElementById('waLeadLegal').hidden = true; } })();
