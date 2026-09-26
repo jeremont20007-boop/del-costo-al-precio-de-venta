@@ -6,7 +6,7 @@ window.CONFIG = {
   precio: "10",                 // USD
   precioTachado: "24",          // USD
   precioPesos: "17.489",        // precio final en pesos del checkout; si está, la página muestra pesos en vez de USD
-  precioPesosTachado: "41.990", // "antes" en pesos (= USD 24); debe ser un precio que existió de verdad
+  precioPesosTachado: "",       // "antes" en pesos: solo si ese precio se cobró de verdad; vacío = no muestra "antes" ni descuento
   diasGarantia: "7",
   // Checkouts: el botón principal va a Impultienda (compradores de Argentina, cobra por Mercado Pago); vacío = Hotmart
   impultiendaUrl: "",

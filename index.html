@@ -311,7 +311,8 @@ const CONFIG = window.CONFIG;
 (function(){
   const pesos = !!CONFIG.precioPesos;
   document.querySelectorAll('[data-precio]').forEach(e => e.textContent = pesos ? '$ ' + CONFIG.precioPesos : 'USD ' + CONFIG.precio);
-  document.querySelectorAll('[data-tachado]').forEach(e => e.textContent = pesos && CONFIG.precioPesosTachado ? '$ ' + CONFIG.precioPesosTachado : 'USD ' + CONFIG.precioTachado);
+  const tachado = pesos ? CONFIG.precioPesosTachado : CONFIG.precioTachado;
+  document.querySelectorAll('[data-tachado]').forEach(e => { if (!tachado) (e.closest('.muted, small') || e).remove(); else e.textContent = (pesos ? '$ ' : 'USD ') + tachado; });
   if (CONFIG.impultiendaUrl) document.getElementById('mpLinea').hidden = false;
   // UTM + sck hacia los checkouts
   const q = new URLSearchParams(location.search), pasar = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','sck','src'];
