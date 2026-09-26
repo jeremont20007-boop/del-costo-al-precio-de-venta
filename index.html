@@ -305,13 +305,14 @@ footer a{color:var(--ink2)}
 
 <div class="barra" role="region" aria-label="Comprar"><div class="p"><span data-precio>USD 10</span><small><span data-tachado>USD 24</span></small></div><a class="btn sm" data-buy="principal" href="#" target="_blank" rel="noopener">Comprar ahora →</a></div>
 
-<dialog id="elegirPago" style="border:0;border-radius:14px;padding:26px 24px;max-width:420px;width:calc(100% - 32px);box-shadow:0 20px 60px rgba(0,0,0,.35)">
+<style>#elegirPago::backdrop{background:rgba(0,0,0,.65)} #elegirPago{overflow:hidden} #elegirPago .btn{white-space:normal;text-align:center;line-height:1.3;padding:12px 16px;flex-direction:column;gap:2px} #elegirPago .btn small{font-weight:400;opacity:.85}</style>
+<dialog id="elegirPago" style="background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:26px 24px;max-width:420px;width:calc(100% - 32px);box-shadow:0 20px 60px rgba(0,0,0,.5)">
   <form method="dialog">
     <p style="margin:0 0 6px;font-weight:700;font-size:1.15rem">¿Pagás con tarjeta argentina, en pesos?</p>
     <p class="muted" style="margin:0 0 18px">Elegimos el checkout según tu moneda, no según dónde estés.</p>
     <div class="botones" style="display:grid;gap:10px">
-      <button class="btn" value="ars" type="submit">Sí, en pesos · Mercado Pago, hasta 3 cuotas</button>
-      <button class="btn ghost" value="ext" type="submit">No, desde otro país · en mi moneda (Hotmart)</button>
+      <button class="btn" value="ars" type="submit">Sí, en pesos<small>Mercado Pago · hasta 3 cuotas</small></button>
+      <button class="btn ghost" value="ext" type="submit">No, desde otro país<small>en mi moneda · Hotmart</small></button>
     </div>
     <p class="muted" style="margin:14px 0 0;font-size:.85rem"><button value="" type="submit" style="background:none;border:0;padding:0;color:inherit;text-decoration:underline;cursor:pointer">Cancelar</button></p>
   </form>
