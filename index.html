@@ -164,6 +164,15 @@ footer a{color:var(--ink2)}
   <img class="tapa" src="tapa.jpg" width="640" height="1024" alt="Tapa del libro Del Costo al Precio de Venta: curva de ingresos y costos con el punto de equilibrio">
 </div></section>
 
+<section id="videos"><div class="wrap">
+  <div class="eyebrow">Miralo en un minuto</div>
+  <h2 style="margin-top:10px">Dos historias cortas sobre lo que el libro te enseña a evitar</h2>
+  <div class="videos">
+    <figure><video controls playsinline preload="none" poster="video/gondola-vacia.jpg" src="video/gondola-vacia.mp4" data-video="gondola"></video><figcaption>La góndola vacía · 56 s. Bananas y frutillas: vender mucho y quedarse sin plata para reponer.</figcaption></figure>
+    <figure><video controls playsinline preload="none" poster="video/punto-de-equilibrio.jpg" src="video/punto-de-equilibrio.mp4" data-video="equilibrio"></video><figcaption>El punto de equilibrio · 48 s. Con $ 5 M de gastos fijos y 50 % de margen, hay que vender $ 10 M al mes.</figcaption></figure>
+  </div>
+</div></section>
+
 <section id="calculadora"><div class="wrap dos">
   <div class="reveal">
     <div class="eyebrow">El error más caro</div>
@@ -331,18 +340,19 @@ const CONFIG = window.CONFIG;
   const q = new URLSearchParams(location.search), pasar = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','sck','src'];
   function conParams(base){ try { const u = new URL(base); pasar.forEach(k => { if (q.get(k)) u.searchParams.set(k, q.get(k)); }); if (!u.searchParams.get('sck') && q.get('utm_source')) u.searchParams.set('sck', [q.get('utm_source'), q.get('utm_campaign'), q.get('utm_content')].filter(Boolean).join('|')); return u.toString(); } catch(e){ return base; } }
   function irAlCheckout(m){ track('InitiateCheckout', {destino: m === 'ext' ? 'hotmart' : 'impultienda'}); window.open(conParams(m === 'ext' ? CONFIG.hotmartUrl : CONFIG.impultiendaUrl), '_blank', 'noopener'); }
-  (function(){ const dlg = document.getElementById('elegirPago'); dlg.querySelectorAll('button').forEach(b => b.addEventListener('click', e => { e.preventDefault(); dlg.close(); if (!b.value) return; try { localStorage.setItem('pagoMoneda', b.value); } catch(_){} irAlCheckout(b.value); })); })();
+  (function(){ const dlg = document.getElementById('elegirPago'); dlg.querySelectorAll('button').forEach(b => b.addEventListener('click', e => { e.preventDefault(); dlg.close(); if (b.value) irAlCheckout(b.value); })); })();
   document.querySelectorAll('[data-buy]').forEach(a => {
     const tipo = a.dataset.buy, url = conParams({principal: CONFIG.impultiendaUrl || CONFIG.hotmartUrl, shopify: CONFIG.shopifyUrl}[tipo] || CONFIG.hotmartUrl);
     if (a.getAttribute('href') === '#comprar') { a.addEventListener('click', () => track('InitiateCheckout', {destino:'seccion'})); return; }
     a.href = url;
-    // Con dos checkouts, el botón principal pregunta la moneda una sola vez y recuerda la respuesta
+    // Con dos checkouts, el botón principal pregunta la moneda cada vez (así se puede cambiar de opción)
     if (!(tipo === 'principal' && CONFIG.impultiendaUrl && CONFIG.hotmartUrl)) return a.addEventListener('click', () => track('InitiateCheckout', {destino: tipo}));
-    a.addEventListener('click', e => { e.preventDefault(); let m = null; try { m = localStorage.getItem('pagoMoneda'); } catch(_){} m ? irAlCheckout(m) : document.getElementById('elegirPago').showModal(); });
+    a.addEventListener('click', e => { e.preventDefault(); document.getElementById('elegirPago').showModal(); });
   });
   // píxeles (solo si hay ID)
   const track = window.track;
   track('ViewContent');
+  document.querySelectorAll('video[data-video]').forEach(v => v.addEventListener('play', () => track('ViewContent', {content_name: 'video_' + v.dataset.video}), {once: true}));
   // comunidad
   if (CONFIG.communityWhatsAppUrl) { const b = document.getElementById('comunidadBtn'); b.href = CONFIG.communityWhatsAppUrl; b.hidden = false; document.getElementById('comunidadTexto').textContent = 'Entrá gratis desde acá:'; }
   // testimonios
