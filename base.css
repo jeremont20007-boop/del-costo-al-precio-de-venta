@@ -45,3 +45,7 @@ b,strong{color:var(--ink);font-weight:600}
 footer{border-top:1px solid var(--line);padding-block:26px 40px;color:var(--ink3);font-size:13.5px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:space-between}
 footer a{color:var(--ink2)}
+.videos{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:26px}
+.videos figure{margin:0}
+.videos video{width:100%;aspect-ratio:9/16;max-height:520px;background:var(--bg2);border:1px solid var(--line);border-radius:14px;display:block}
+.videos figcaption{margin-top:10px;font-size:15px;color:var(--ink2)}
