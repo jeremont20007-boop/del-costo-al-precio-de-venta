@@ -9,7 +9,7 @@ window.CONFIG = {
   precioPesosTachado: "",       // "antes" en pesos: solo si ese precio se cobró de verdad; vacío = no muestra "antes" ni descuento
   diasGarantia: "7",
   // Checkouts: el botón principal va a Impultienda (compradores de Argentina, cobra por Mercado Pago); vacío = Hotmart
-  impultiendaUrl: "",
+  impultiendaUrl: "https://del-costo-al-precio.impultienda.ar/checkout/libro-planilla",
   hotmartUrl: "https://pay.hotmart.com/P106495888C",
   shopifyUrl: "https://xr5bbp-zn.myshopify.com/products/de-la-inversion-a-la-ganancia-ebook-digital",   // en pausa: ningún botón la usa
   // Captación y contacto
