@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Me llegó un juicio de ARCA · Qué hacer con la boleta, el embargo y los honorarios</title>
+<meta name="description" content="Guía práctica de un contador matriculado: qué hacer cuando ARCA o Rentas te inicia un juicio, cómo pagar sin que el juicio siga, cuánto corresponde de honorarios y cómo pedir que te levanten el embargo.">
+<meta property="og:type" content="book">
+<meta property="og:title" content="Me llegó un juicio de ARCA · Guía práctica">
+<meta property="og:description" content="Te embargaron la cuenta y la deuda sigue creciendo. Esto es lo que tenés que hacer esta semana.">
+<meta property="og:image" content="https://jeremont20007-boop.github.io/del-costo-al-precio-de-venta/juicios/og.jpg">
+<meta property="og:url" content="https://jeremont20007-boop.github.io/del-costo-al-precio-de-venta/juicios/">
+<link rel="canonical" href="https://jeremont20007-boop.github.io/del-costo-al-precio-de-venta/juicios/">
+<meta property="og:locale" content="es_AR">
+<meta name="theme-color" content="#172219">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Instrument+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<script>
+/* ============ CONFIGURACIÓN DE ESTA PÁGINA ============
+   Cambiar acá precio, checkout, contacto o píxel; después commit + push. */
+window.CONFIG = {
+  precioPesos: "19.990",
+  diasGarantia: "7",
+  checkoutUrl: "",             // checkout de Impultienda (libro + kit como bump + diagnóstico como upsell); vacío = reservar por WhatsApp
+  leadWhatsApp: "5492995285513",
+  metaPixelId: ""              // píxel "Juicios fiscales"
+};
+</script>
+<style>
+:root{--ink:#172219;--paper:#EDF2E8;--white:#FAFCF8;--stamp:#B5312F;--ochre:#B27612;--muted:#4F5F53;--line:#C6D3C0;
+  --d:"Bricolage Grotesque",Impact,sans-serif;--s:"Instrument Sans",system-ui,"Segoe UI",sans-serif;--m:"IBM Plex Mono",Consolas,monospace}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.55 var(--s)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 18px}
+a{color:inherit}
+.nav{position:sticky;top:0;z-index:5;background:var(--ink);color:var(--paper)}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center;min-height:58px;gap:10px}
+.brand{font:500 12px var(--m);letter-spacing:.12em;text-transform:uppercase;text-decoration:none}
+.btn{display:inline-block;background:var(--stamp);color:#fff;text-decoration:none;font:700 17px var(--s);padding:15px 22px;border-radius:12px;border:0;cursor:pointer}
+.btn.sm{font-size:14px;padding:10px 14px}
+.btn.alt{background:var(--ink)}
+.btn.ghost{background:transparent;border:2px solid var(--ink);color:var(--ink)}
+section{padding:56px 0;border-bottom:1px solid var(--line)}
+.k{font:500 13px var(--m);letter-spacing:.16em;text-transform:uppercase;color:var(--stamp);margin:0 0 10px}
+h1{font:800 clamp(38px,6.4vw,66px)/1 var(--d);letter-spacing:-.025em;margin:0 0 16px}
+h1 em,h2 em{font-style:normal;color:var(--stamp)}
+h2{font:800 clamp(28px,4.2vw,42px)/1.05 var(--d);letter-spacing:-.02em;margin:0 0 16px}
+h3{font:700 20px var(--d);margin:0 0 6px}
+.hero .grid{display:grid;grid-template-columns:1.25fr .75fr;gap:34px;align-items:center}
+.hero img{width:100%;max-width:340px;border-radius:6px;box-shadow:0 18px 40px rgba(23,34,25,.25);justify-self:center}
+.sub{font-size:20px;color:var(--muted);margin:0 0 22px}
+.nota{font-size:14px;color:var(--muted);margin-top:10px}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.check li{list-style:none;margin:0 0 10px;padding-left:34px;position:relative}
+.check li::before{content:"";position:absolute;left:0;top:3px;width:20px;height:20px;border:2px solid var(--ink);border-radius:4px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.card.stamp{border:3px solid var(--stamp)}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:10px}
+.tile .v{font:800 34px var(--d);color:var(--stamp);display:block}
+.diag{background:var(--ink);color:var(--paper)}
+.diag p{color:#C9D4C4}
+.mono{font:500 13px var(--m);color:var(--muted)}
+details{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:0 0 10px}
+summary{font-weight:700;cursor:pointer}
+.precio{font:800 56px var(--d);margin:6px 0}
+footer{padding:28px 0 90px;font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+.barra{position:fixed;left:0;right:0;bottom:0;background:var(--white);border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;padding:10px 16px;z-index:6}
+.barra .p{font:800 22px var(--d)}
+@media (max-width:760px){.hero .grid,.dos,.tiles{grid-template-columns:1fr}.hero img{max-width:170px}.nav .btn{display:none}.hero .btn.ghost{margin:10px 0 0!important}section{padding:40px 0}h1{font-size:36px}}
+</style>
+</head>
+<body>
+
+<header class="nav"><div class="wrap">
+  <a class="brand" href="./">Montenegro &amp; Asociados · Juicios fiscales</a>
+  <a class="btn sm" data-buy href="#comprar"><span data-cta>Quiero el libro</span> · <span data-precio>$ 19.990</span></a>
+</div></header>
+
+<section class="hero"><div class="wrap grid">
+  <div>
+    <p class="k">Guía práctica de un contador matriculado</p>
+    <h1>Te embargaron la cuenta. <em>La deuda con ARCA sigue creciendo.</em></h1>
+    <p class="sub">Esto es lo que tenés que hacer esta semana: qué te reclaman, qué pagar primero, cómo pedir que te levanten el embargo y cuánto corresponde de honorarios. Sin pagar de más.</p>
+    <a class="btn" data-buy href="#comprar"><span data-cta>Quiero el libro</span> · <span data-precio>$ 19.990</span> →</a>
+    <a class="btn ghost" href="diagnostico/" style="margin-left:6px">Diagnóstico gratis en 2 minutos</a>
+    <p class="nota">PDF de 90 páginas · acceso inmediato · garantía de <span data-garantia>7</span> días</p>
+  </div>
+  <img src="tapa.jpg" alt="Tapa del libro Me llegó un juicio de ARCA" width="640" height="1024">
+</div></section>
+
+<section id="problema"><div class="wrap dos">
+  <div>
+    <p class="k">¿Te suena?</p>
+    <h2>Si marcaste tres, seguí leyendo</h2>
+  </div>
+  <ul class="check">
+    <li>Me enteré del juicio por el banco, no por ARCA.</li>
+    <li>Pagué la deuda y el juicio sigue.</li>
+    <li>No entiendo qué me reclaman ni de cuándo es.</li>
+    <li>El abogado de ARCA me pide honorarios y no sé si corresponden.</li>
+    <li>Se me cayó el plan de pagos y nadie me avisó.</li>
+    <li>No puedo vender el auto: dice que estoy inhibido.</li>
+    <li>Rentas me cobra más de costas que de deuda.</li>
+    <li>Tengo mails de ARCA sin abrir en el Domicilio Fiscal Electrónico.</li>
+  </ul>
+</div></section>
+
+<section id="costo"><div class="wrap">
+  <p class="k">Lo que nadie te explica</p>
+  <h2>En un juicio fiscal, <em>lo caro no es la deuda</em></h2>
+  <p>La deuda ya la tenías. El juicio le suma otras cosas, y cada semana que pasa pesan más:</p>
+  <div class="tiles">
+    <div class="card tile"><span class="v">3,5 %</span>de interés punitorio por mes, además de los resarcitorios, desde que empieza el juicio.</div>
+    <div class="card tile"><span class="v">hasta 8 %</span>de la deuda en honorarios del abogado del fisco (y 10,4 % si hay excepciones).</div>
+    <div class="card tile"><span class="v">5 años</span>puede durar una inhibición que nadie pidió levantar, aunque la deuda esté paga.</div>
+  </div>
+  <p class="mono" style="margin-top:14px">Res. MEcon 823/2025 · Disposición AFIP 276/2008 · Ley 17.801, art. 37. Todas enlazadas en el libro.</p>
+</div></section>
+
+<section id="metodo"><div class="wrap">
+  <p class="k">El método</p>
+  <h2>El juicio no se pierde en el juzgado. <em>Se pierde en el seguimiento.</em></h2>
+  <div class="dos">
+    <div class="card stamp"><h3>La ventana de los 5 días</h3><p>Si cancelás la deuda u ofrecés lo embargado antes de que venza el plazo para oponer excepciones, los honorarios del fisco van al mínimo legal (Ley 11.683, art. 98). Y el embargo, como regla, se traba recién 48 horas después de ese plazo. Casi nadie lo usa a tiempo.</p></div>
+    <div class="card"><h3>Las 5 condiciones de cierre</h3><p>Capital, intereses, honorarios, archivo y levantamiento verificado. Si falta una, el juicio no está cerrado: el pago no se imputa solo, las medidas no se levantan solas y el plan que se cae reactiva todo.</p></div>
+  </div>
+</div></section>
+
+<section id="contenido"><div class="wrap dos">
+  <div>
+    <p class="k">Qué vas a encontrar</p>
+    <h2>Todo el camino, de la boleta al archivo</h2>
+    <p>Escrito con 16 años de expedientes reales de ARCA y de Rentas de Neuquén, y con cada norma enlazada a su texto oficial.</p>
+  </div>
+  <ul class="check">
+    <li>Cómo leer el resumen de juicios y el mandamiento, campo por campo.</li>
+    <li>Las cuatro formas de pagar, y cómo comunicarlo para que el juicio se archive.</li>
+    <li>Cómo usar el dinero embargado para cancelar y frenar los intereses.</li>
+    <li>La escala de honorarios, y qué preguntar antes de pagarlos.</li>
+    <li>Apremios de Rentas: por qué cuestan tanto y cómo negociarlos.</li>
+    <li>Seis casos reales contados de punta a punta, con sus números.</li>
+    <li>Modelos de presentaciones y correos para copiar, y listas de control.</li>
+  </ul>
+</div></section>
+
+<section class="diag"><div class="wrap dos" style="align-items:center">
+  <div><h2 style="color:#fff">¿No sabés por dónde empezar?</h2><p>Respondé 8 preguntas y mirá qué plazo corre, qué pasa con tu embargo y qué te conviene hacer. Gratis, sin registrarte y sin que guardemos tus datos.</p></div>
+  <p><a class="btn" href="diagnostico/">Hacer el diagnóstico →</a></p>
+</div></section>
+
+<section id="para-quien"><div class="wrap dos">
+  <div class="card"><h3>Es para vos si…</h3><ul><li>tenés un comercio, una pyme o sos monotributista o autónomo;</li><li>te llegó una intimación, un juicio, un embargo o un pedido de honorarios de ARCA o de Rentas;</li><li>querés entender qué pasa y actuar, aunque tengas contador.</li></ul></div>
+  <div class="card"><h3>No es para vos si…</h3><ul><li>querés discutir si la deuda está bien calculada: eso no se discute en el juicio, y para eso hace falta un abogado;</li><li>buscás una fórmula para no pagar lo que debés.</li></ul></div>
+</div></section>
+
+<section id="autor"><div class="wrap dos" style="align-items:center">
+  <div><p class="k">Quién lo escribió</p><h2>Jeremías Emanuel Montenegro</h2><p>Contador Público Nacional (UNCo), matrícula C.P.C.E.N. T° XII F° 069, titular del Estudio Montenegro &amp; Asociados, en Neuquén. Desde 2010 atiende juicios fiscales de comercios, transportistas y pymes: más de 50 legajos, de ARCA y de Rentas. El libro es el método con el que trabaja su estudio.</p></div>
+  <div class="card"><p class="mono">"Casi nunca hay nada que discutir sobre la deuda. Lo que convierte un problema de cien mil pesos en uno de setecientos mil es un VEP que nadie pagó, un pago que nadie comunicó, una inhibición que nadie pidió levantar."</p></div>
+</div></section>
+
+<section id="comprar"><div class="wrap dos" style="align-items:center">
+  <div>
+    <p class="k">El libro</p>
+    <h2>Me llegó un juicio de ARCA</h2>
+    <p class="precio" data-precio>$ 19.990</p>
+    <p>PDF de 90 páginas, edición 2026, con acceso inmediato. Garantía de <span data-garantia>7</span> días.</p>
+    <p><a class="btn" data-buy href="#" target="_blank" rel="noopener"><span data-cta>Comprar ahora</span> →</a></p>
+    <p class="nota" data-nota>Pagás en pesos con Mercado Pago, hasta en cuotas.</p>
+  </div>
+  <div class="card">
+    <h3>En el checkout vas a ver dos opciones aparte</h3>
+    <p>Son compras separadas del libro, con su propio precio y factura:</p>
+    <ul><li><b>Kit editable</b>: los modelos de escritos en Word y la planilla de conciliación en Excel.</li><li><b>Diagnóstico de tu juicio en 48 horas</b> por un contador matriculado, con un informe escrito y el plan de acción.</li></ul>
+    <p class="nota">Por ser contenido digital de entrega inmediata, la revocación tiene las excepciones del art. 1116 del Código Civil y Comercial; igual tenés la garantía de <span data-garantia>7</span> días y el <a href="arrepentimiento.html">botón de arrepentimiento</a>.</p>
+  </div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <h2>Preguntas frecuentes</h2>
+  <details><summary>¿Sirve si el juicio es de Rentas y no de ARCA?</summary><p>Sí. Tiene una parte entera sobre los apremios de Rentas de Neuquén y un apartado para Río Negro.</p></details>
+  <details><summary>¿Me va a levantar el embargo?</summary><p>El libro te explica qué pagar, cómo comunicarlo y cómo pedir el levantamiento, con los modelos. El levantamiento lo ordena el juez a pedido del fisco: nadie honesto te puede prometer una fecha.</p></details>
+  <details><summary>Ya tengo contador. ¿Me sirve igual?</summary><p>Sí: vas a entender qué está pasando, qué preguntar y qué controlar. Muchos contadores lo usan como manual.</p></details>
+  <details><summary>¿Está actualizado?</summary><p>Edición 2026, con la normativa vigente a septiembre de 2026 y cada norma enlazada a su texto oficial (InfoLEG, Biblioteca de ARCA, Rentas).</p></details>
+  <details><summary>¿Cómo lo recibo?</summary><p>Apenas se acredita el pago, te llega el enlace de descarga del PDF.</p></details>
+</div></section>
+
+<footer><div class="wrap">
+  <span>Jeremías Emanuel Montenegro · CUIT 20-31203392-6 · IVA Responsable Inscripto · Neuquén, Argentina</span>
+  <span><a href="arrepentimiento.html">Botón de arrepentimiento</a> · <a href="terminos.html">Términos</a> · <a href="privacidad.html">Privacidad</a></span>
+</div></footer>
+
+<div class="barra" role="region" aria-label="Comprar"><div class="p" data-precio>$ 19.990</div><a class="btn sm" data-buy href="#" target="_blank" rel="noopener"><span data-cta>Comprar ahora</span> →</a></div>
+
+<script>
+(function(){
+  const C = window.CONFIG, $$ = s => document.querySelectorAll(s);
+  $$('[data-precio]').forEach(e => e.textContent = '$ ' + C.precioPesos);
+  $$('[data-garantia]').forEach(e => e.textContent = C.diasGarantia);
+  if (C.metaPixelId) { !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init', C.metaPixelId); fbq('track', 'PageView'); }
+  const track = (ev, extra) => { try { if (window.fbq) fbq('track', ev, Object.assign({content_name: 'Me llegó un juicio de ARCA', value: Number(C.precioPesos.replace(/\./g, '')), currency: 'ARS'}, extra || {})); } catch (e) {} };
+  track('ViewContent');
+  const q = new URLSearchParams(location.search);
+  let destino = '', ev = 'InitiateCheckout';
+  if (C.checkoutUrl) { try { const u = new URL(C.checkoutUrl); ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','sck','src'].forEach(k => { if (q.get(k)) u.searchParams.set(k, q.get(k)); }); destino = u.toString(); } catch (e) { destino = C.checkoutUrl; } }
+  else if (C.leadWhatsApp) {
+    destino = 'https://wa.me/' + C.leadWhatsApp + '?text=' + encodeURIComponent('Hola, quiero el libro "Me llegó un juicio de ARCA".'); ev = 'Lead';
+    $$('[data-cta]').forEach(e => e.textContent = 'Pedirlo por WhatsApp');
+    $$('[data-nota]').forEach(e => e.textContent = 'Estamos habilitando el pago en línea. Escribinos y te mandamos el enlace, al mismo precio.');
+  }
+  $$('[data-buy]').forEach(a => {
+    if (a.getAttribute('href') === '#comprar') { a.addEventListener('click', () => track('InitiateCheckout', {destino: 'seccion'})); return; }
+    a.href = destino; a.addEventListener('click', () => track(ev));
+  });
+  // conservar las UTM al ir al diagnóstico
+  if (location.search) $$('a[href="diagnostico/"]').forEach(a => a.href = 'diagnostico/' + location.search);
+})();
+</script>
+</body>
+</html>

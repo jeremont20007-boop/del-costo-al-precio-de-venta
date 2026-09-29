@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diagnóstico de tu juicio fiscal en 2 minutos</title>
+<meta name="description" content="Ocho preguntas para saber qué hacer con un juicio de ARCA o un apremio de Rentas: plazos, embargo, honorarios y levantamiento. Hecho por un contador matriculado.">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Instrument+Sans:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* Quiz de diagnóstico — Juicios fiscales. Todo lo configurable está en CONFIG, al final. No guarda ni envía datos. */
+:root{--ink:#172219;--paper:#EDF2E8;--stamp:#B5312F;--ochre:#B27612;--muted:#4F5F53;--line:#C6D3C0;--ok:#2E7D5B;--warn:#A8740A}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 "Instrument Sans",Arial,sans-serif}
+.wrap{max-width:640px;margin:0 auto;padding:20px 16px 48px}
+.top{display:flex;justify-content:space-between;align-items:center;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+h1{font:800 34px/1.02 "Bricolage Grotesque",sans-serif;margin:18px 0 10px;letter-spacing:-.02em}
+h1 em{font-style:normal;color:var(--stamp)}
+.lede{color:var(--muted);margin:0 0 18px}
+.bar{height:6px;background:var(--line);border-radius:9px;overflow:hidden;margin:14px 0 18px}.bar i{display:block;height:100%;width:0;background:var(--stamp);transition:width .3s}
+.q{font:700 22px/1.2 "Bricolage Grotesque",sans-serif;margin:0 0 6px}
+.help{color:var(--muted);font-size:14px;margin:0 0 14px}
+.opt{display:block;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:13px 14px;margin:0 0 9px;font:600 15px "Instrument Sans",sans-serif;color:var(--ink);cursor:pointer}
+.opt:hover,.opt:focus{border-color:var(--ink);outline:none}
+.btn{display:inline-block;background:var(--stamp);color:#fff;border:0;border-radius:10px;padding:14px 18px;font:700 16px "Instrument Sans",sans-serif;text-decoration:none;cursor:pointer}
+.btn.sec{background:var(--ink)}
+.back{background:none;border:0;color:var(--muted);text-decoration:underline;cursor:pointer;padding:6px 0;font-size:14px}
+.nivel{display:inline-block;font:700 12px "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:99px;color:#fff}
+.card{background:#fff;border:1px solid var(--line);border-left:4px solid var(--ochre);border-radius:8px;padding:12px 14px;margin:10px 0}
+.card.crit{border-left-color:var(--stamp)} .card.ok{border-left-color:var(--ok)}
+.card b{display:block;margin-bottom:3px}
+.card small{color:var(--muted)}
+.cta{background:var(--ink);color:var(--paper);border-radius:12px;padding:18px;margin:18px 0}
+.cta h3{font:800 20px "Bricolage Grotesque",sans-serif;margin:0 0 6px}
+.cta p{margin:0 0 12px;color:#C9D4C4}
+.cta .btn{margin:4px 6px 4px 0}
+.legal{font-size:12px;color:var(--muted);margin-top:22px}
+.legal a{color:var(--muted)}
+.hide{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><span>Montenegro &amp; Asociados</span><span>Contador matriculado · CPCEN</span></div>
+
+  <section id="inicio">
+    <h1>¿Te llegó un juicio de ARCA o de Rentas? <em>Diagnosticalo en 2 minutos.</em></h1>
+    <p class="lede">Ocho preguntas. Al final vas a saber en qué etapa está, qué plazo corre, qué pasa con el embargo y cuánto pueden costarte los honorarios. Sin registrarte: no pedimos ni guardamos tus datos.</p>
+    <button class="btn" onclick="empezar()">Empezar el diagnóstico</button>
+    <p class="legal">Hecho por Jeremías E. Montenegro, Contador Público Nacional (UNCo), C.P.C.E.N. T° XII F° 069, con la normativa vigente a septiembre de 2026. Es una orientación general: no reemplaza el análisis de tu caso.</p>
+  </section>
+
+  <section id="quiz" class="hide">
+    <div class="bar"><i id="prog"></i></div>
+    <p class="q" id="qt"></p>
+    <p class="help" id="qh"></p>
+    <div id="ops"></div>
+    <button class="back" onclick="atras()">← Volver</button>
+  </section>
+
+  <section id="resultado" class="hide">
+    <span class="nivel" id="nivel"></span>
+    <h1 id="rt" style="font-size:28px"></h1>
+    <p class="lede" id="rl"></p>
+    <div id="hallazgos"></div>
+    <div class="cta">
+      <h3>El paso a paso completo, con los modelos para presentar</h3>
+      <p id="ctaLibro">El libro <b>Juicios fiscales · de la boleta al archivo</b> explica cada etapa con casos reales, los plazos, cómo pagar sin que el juicio siga y cómo pedir que te levanten el embargo. Con enlaces a cada norma oficial.</p>
+      <a class="btn" id="btnLibro" href="#">Quiero el libro</a>
+      <a class="btn sec" id="btnWa" href="#" target="_blank" rel="noopener">Que lo revise un contador</a>
+    </div>
+    <button class="back" onclick="location.reload()">Hacer el diagnóstico de nuevo</button>
+    <p class="legal">Orientación general basada en la Ley 11.683 (arts. 37, 52, 92 y 98), la Disposición AFIP 276/2008, las Disposiciones 194/2021 y 120/2025, la RG 5711/2025 y el Código Fiscal de Neuquén. Las normas cambian: el libro trae el enlace a cada una. Esta página no guarda tus respuestas. <a href="../privacidad.html">Privacidad</a> · <a href="../terminos.html">Términos</a></p>
+  </section>
+</div>
+
+<script>
+const CONFIG = {
+  libroUrl: "../",         // página de venta del libro (desde ahí, al checkout)
+  metaPixelId: "",         // píxel "Juicios fiscales" (crearlo en Meta y pegar el ID)
+  whatsapp: "5492995285513",
+  utm: location.search || ""
+};
+
+if (CONFIG.metaPixelId) { !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init', CONFIG.metaPixelId); fbq('track', 'PageView'); }
+
+const P = [
+  {k:"org", t:"¿Quién te reclama la deuda?", h:"Figura en la carta, en el mandamiento o en el resumen de tu banco.",
+   o:[["arca","ARCA (ex AFIP)"],["nqn","Rentas de Neuquén"],["rn","Agencia de Recaudación de Río Negro"],["ns","No sé"]]},
+  {k:"doc", t:"¿Qué te llegó?", h:"Elegí lo último que recibiste.",
+   o:[["intim","Una intimación (en el Domicilio Fiscal Electrónico o una cédula de Rentas), todavía sin juicio"],["mand","Un mandamiento de intimación de pago: me notificaron un juicio"],["emb","Me embargaron la cuenta"],["sent","Una sentencia o 'cédula de notificación' del juzgado"],["hon","Me reclaman honorarios del abogado del fisco"],["ns","No sé qué es"]]},
+  {k:"cuando", t:"¿Cuándo te notificaron el juicio (el mandamiento)?", h:"Contá días hábiles: sin sábados, domingos ni feriados.",
+   o:[["menos5","Hace menos de 5 días hábiles"],["mas5","Hace más de 5 días hábiles"],["ns","No sé / no me notificaron un juicio"]]},
+  {k:"pago", t:"¿Pagaste algo de esa deuda?", h:"",
+   o:[["antes","Sí, antes de que empezara el juicio"],["despues","Sí, después de que empezó el juicio"],["noavise","Sí, pero no se lo avisé a nadie (o no sé si se imputó)"],["no","No pagué nada"]]},
+  {k:"plan", t:"¿Esa deuda está en un plan de pagos?", h:"Mis Facilidades de ARCA o un plan de Rentas.",
+   o:[["aldia","Sí, y estoy al día"],["atrasado","Sí, pero debo una o más cuotas"],["no","No"]]},
+  {k:"medida", t:"¿Tenés alguna medida trabada?", h:"",
+   o:[["emb","Cuentas embargadas"],["inh","Inhibición de bienes (no puedo vender el auto, una propiedad…)"],["ambas","Las dos"],["no","Ninguna"],["ns","No sé"]]},
+  {k:"monto", t:"¿Cuánto te reclaman, más o menos?", h:"El monto de la demanda o de la boleta de deuda.",
+   o:[["chico","Menos de $ 500.000"],["medio","Entre $ 500.000 y $ 3 millones"],["grande","Entre $ 3 y $ 10 millones"],["muy","Más de $ 10 millones"]]},
+  {k:"contador", t:"¿Alguien está siguiendo el juicio por vos?", h:"",
+   o:[["si","Sí, mi contador o un abogado"],["no","No, lo estoy viendo solo"]]}
+];
+
+let i = 0; const R = {};
+function show(id){ for (const s of ["inicio","quiz","resultado"]) document.getElementById(s).classList.toggle("hide", s!==id); window.scrollTo(0,0); }
+function empezar(){ i = 0; show("quiz"); render(); }
+function render(){
+  const p = P[i];
+  document.getElementById("prog").style.width = (i / P.length * 100) + "%";
+  document.getElementById("qt").textContent = `${i+1}/${P.length} · ${p.t}`;
+  document.getElementById("qh").textContent = p.h;
+  const box = document.getElementById("ops"); box.innerHTML = "";
+  for (const [v, txt] of p.o){ const b = document.createElement("button"); b.className = "opt"; b.textContent = txt; b.onclick = () => { R[p.k] = v; i++; i < P.length ? render() : resultado(); }; box.appendChild(b); }
+}
+function atras(){ if (i > 0){ i--; render(); } else show("inicio"); }
+
+function resultado(){
+  const H = []; let nivel = 1; // 1 verde, 2 amarillo, 3 rojo
+  const add = (tipo, titulo, texto) => { H.push({tipo, titulo, texto}); if (tipo === "crit") nivel = 3; else if (tipo === "warn" && nivel < 3) nivel = 2; };
+  const arca = R.org === "arca", prov = R.org === "nqn" || R.org === "rn";
+
+  if (R.doc === "intim") add("ok", "Todavía no hay juicio: es el momento más barato", "Si pagás o armás un plan antes de que se emita la boleta de deuda, no hay honorarios ni embargo. En Rentas, la cédula da 15 días hábiles.");
+  if (R.cuando === "menos5" && arca) add("crit", "Estás dentro de la ventana de los 5 días", "Si cancelás la deuda u ofrecés en pago lo embargado antes de que venza el plazo para oponer excepciones, los honorarios del agente fiscal quedan en el mínimo legal (Ley 11.683, art. 98). Y, como regla, el embargo se traba recién 48 h después de ese plazo (Disp. ARCA 120/2025). Cada día cuenta.");
+  if (R.cuando === "menos5" && !arca) add("crit", "Corre el plazo para defenderte", "El juicio admite pocas defensas y en plazos cortos. Si hay algo para plantear (pago, prescripción, error en la boleta), la consulta tiene que ser hoy.");
+  if (R.pago === "noavise") add("warn", "Puede haber un pago que no se imputó", "Si el juicio empezó por un pago mal imputado o no comunicado, y es la primera vez, la ley exime de costas (Ley 11.683, art. 92; Disp. AFIP 276/2008). Pero hay que comunicarlo: el pago solo no cierra nada.");
+  if (R.pago === "antes") add("warn", "Si pagaste antes de la demanda, hay que demostrarlo", "El pago total documentado anterior a la demanda es una de las defensas admitidas. Lo primero es comunicarlo con el comprobante para que den de baja la boleta.");
+  if (R.pago === "despues") add("warn", "Pagar después de la demanda cierra el juicio, pero con costas", "Hay que comunicar el pago para que archiven, y después vienen los honorarios. Revisá en qué etapa estaba el juicio: define si el tope es el 4 % o el 8 %.");
+  if (R.plan === "atrasado") add("crit", "El plan puede caer y el juicio volver", "En el régimen vigente, dos cuotas impagas a los 60 días del vencimiento de la segunda hacen caducar el plan: la deuda vuelve a ejecución con todo lo acumulado y el embargo que estaba frenado.");
+  if (R.plan === "aldia") add("ok", "El plan te protege mientras lo pagues", "Falta pedir el archivo del juicio y pagar los honorarios. Y controlar cada cuota: una caída reactiva todo.");
+  if (R.medida === "emb" || R.medida === "ambas") add("crit", "Cuenta embargada: el dinero retenido no cancela nada solo", arca ? "Podés pedir que los fondos embargados se transfieran para pagar, desde el Sistema de Cuentas Tributarias (\"Ofrecimiento de pago con embargos bancarios\"). Así frenás intereses y, si lo hacés a tiempo, los honorarios bajan." : "El embargo se levanta pagando el capital actualizado y las costas, y pidiéndolo al procurador. Pedí la liquidación por escrito.");
+  if (R.medida === "inh" || R.medida === "ambas") add("warn", "La inhibición no se levanta sola (salvo a los 5 años)", "Aunque pagues todo, hay que pedir el levantamiento y controlarlo con un informe de dominio. Si no, dura cinco años desde que se anotó.");
+  if (R.doc === "hon") add("warn", "Antes de pagar honorarios, revisá el porcentaje", arca ? "La escala de ARCA es 4 % por etapa: máximo 8 % sin excepciones, y 4 % si se pagó el total antes de los actos de ejecución posteriores a la sentencia (Disp. AFIP 276/2008). Se pagan solo con VEP." : "En Rentas los honorarios del procurador se negocian y suelen poder pagarse en cuotas. Pedí la liquidación por escrito con cada rubro.");
+  if (prov) add("warn", "En los apremios provinciales, las costas pesan más que la deuda", "En deudas chicas, tasa de justicia, sellados y honorarios pueden multiplicar varias veces el capital. Negociá cuotas con el procurador y pagá todo con referencia al número de apremio.");
+  if (R.org === "ns" || R.doc === "ns") add("warn", "Primero, saber exactamente qué hay", "Pedí el resumen de juicios vigentes (ARCA) o el informe integral de deuda (Rentas). Sin ese documento, cualquier pago puede quedar mal imputado.");
+  if ((R.monto === "grande" || R.monto === "muy") && R.contador === "no") add("crit", "Con este monto, no lo encares solo", "Los honorarios del fisco se calculan sobre el monto de la boleta: con varios millones en juego, una decisión a tiempo vale mucho más que su costo.");
+  if (!H.length) add("ok", "No aparecen urgencias con tus respuestas", "Igual, conviene tener el resumen de juicios actualizado y controlar el Domicilio Fiscal Electrónico cada semana.");
+
+  const nv = {1:["Situación controlada","#2E7D5B"],2:["Atención: hay cosas para resolver","#A8740A"],3:["Urgente: actuá esta semana","#B5312F"]}[nivel];
+  const el = document.getElementById("nivel"); el.textContent = nv[0]; el.style.background = nv[1];
+  document.getElementById("rt").textContent = nivel === 3 ? "Tu juicio tiene un plazo o un riesgo que no puede esperar" : nivel === 2 ? "Tu juicio se puede cerrar, pero hay pasos que no son automáticos" : "Vas bien: estos son los próximos pasos";
+  document.getElementById("rl").textContent = "Esto es lo que surge de tus respuestas, con la norma que lo respalda:";
+  document.getElementById("hallazgos").innerHTML = H.map(h => `<div class="card ${h.tipo}"><b>${h.titulo}</b><small>${h.texto}</small></div>`).join("");
+
+  const resumen = `Hola, hice el diagnóstico de juicio fiscal. Organismo: ${R.org}; me llegó: ${R.doc}; monto: ${R.monto}; medidas: ${R.medida}. Quiero que lo revise un contador.`;
+  document.getElementById("btnWa").href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(resumen)}`;
+  const lib = document.getElementById("btnLibro");
+  lib.href = CONFIG.libroUrl ? CONFIG.libroUrl + CONFIG.utm : `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent("Hola, quiero el libro Juicios fiscales.")}`;
+  if (nivel === 3){ document.getElementById("btnWa").className = "btn"; lib.className = "btn sec"; }
+  document.getElementById("prog").style.width = "100%";
+  show("resultado");
+  if (window.fbq) fbq("track", "Lead", {content_name: "quiz_juicios_" + nivel});
+}
+</script>
+</body>
+</html>
