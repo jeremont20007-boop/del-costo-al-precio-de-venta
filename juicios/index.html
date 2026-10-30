@@ -23,7 +23,7 @@ window.CONFIG = {
   diasGarantia: "7",
   checkoutUrl: "",             // checkout de Impultienda (libro + kit como bump + diagnóstico como upsell); vacío = reservar por WhatsApp
   leadWhatsApp: "5492995285513",
-  metaPixelId: ""              // píxel "Juicios fiscales"
+  metaPixelId: "1944695516199310"  // píxel compartido de los libros (se distingue por content_name)
 };
 </script>
 <style>
@@ -68,6 +68,7 @@ footer{padding:28px 0 90px;font-size:14px;color:var(--muted)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
 .barra{position:fixed;left:0;right:0;bottom:0;background:var(--white);border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;padding:10px 16px;z-index:6}
 .barra .p{font:800 22px var(--d)}
+.hero video.gancho{width:100%;max-width:340px;justify-self:center;border-radius:14px;box-shadow:0 18px 40px rgba(23,34,25,.25);background:var(--ink)}
 @media (max-width:760px){.hero .grid,.dos,.tiles{grid-template-columns:1fr}.hero img{max-width:170px}.nav .btn{display:none}.hero .btn.ghost{margin:10px 0 0!important}section{padding:40px 0}h1{font-size:36px}}
 </style>
 </head>
@@ -80,14 +81,15 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
 
 <section class="hero"><div class="wrap grid">
   <div>
-    <p class="k">Guía práctica de un contador matriculado</p>
-    <h1>Te embargaron la cuenta. <em>La deuda con ARCA sigue creciendo.</em></h1>
-    <p class="sub">Esto es lo que tenés que hacer esta semana: qué te reclaman, qué pagar primero, cómo pedir que te levanten el embargo y cuánto corresponde de honorarios. Sin pagar de más.</p>
+    <p class="k" data-hook-k>Guía práctica de un contador matriculado</p>
+    <h1 data-hook-h1>Te embargaron la cuenta. <em>La deuda con ARCA sigue creciendo.</em></h1>
+    <p class="sub" data-hook-sub>Esto es lo que tenés que hacer esta semana: qué te reclaman, qué pagar primero, cómo pedir que te levanten el embargo y cuánto corresponde de honorarios. Sin pagar de más.</p>
     <a class="btn" data-buy href="#comprar"><span data-cta>Quiero el libro</span> · <span data-precio>$ 19.990</span> →</a>
     <a class="btn ghost" href="diagnostico/" style="margin-left:6px">Diagnóstico gratis en 2 minutos</a>
-    <p class="nota">PDF de 91 páginas, entrega inmediata · garantía de <span data-garantia>7</span> días</p>
+    <p class="nota">PDF de 93 páginas, entrega inmediata · garantía de <span data-garantia>7</span> días</p>
   </div>
-  <img src="tapa.jpg" alt="Tapa del libro Me llegó un juicio de ARCA" width="640" height="1024">
+  <img src="tapa.jpg" alt="Tapa del libro Me llegó un juicio de ARCA" width="640" height="1024" data-hook-tapa>
+  <video class="gancho" data-hook-video muted playsinline loop preload="none" hidden width="720" height="1280"></video>
 </div></section>
 
 <section id="problema"><div class="wrap dos">
@@ -165,7 +167,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
     <p class="k">El libro</p>
     <h2>Me llegó un juicio de ARCA</h2>
     <p class="precio" data-precio>$ 19.990</p>
-    <p>Edición 2026, 91 páginas. Lo recibís <b>en el momento</b>, apenas se acredita el pago, en un PDF de uso personal. Garantía de <span data-garantia>7</span> días.</p>
+    <p>Edición 2026, 93 páginas. Lo recibís <b>en el momento</b>, apenas se acredita el pago, en un PDF de uso personal. Garantía de <span data-garantia>7</span> días.</p>
     <p><a class="btn" data-buy href="#" target="_blank" rel="noopener"><span data-cta>Comprar ahora</span> →</a></p>
     <p class="nota" data-nota>Pagás en pesos con Mercado Pago, hasta en cuotas.</p>
   </div>
@@ -213,6 +215,28 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
     if (a.getAttribute('href') === '#comprar') { a.addEventListener('click', () => track('InitiateCheckout', {destino: 'seccion'})); return; }
     a.href = destino; a.addEventListener('click', () => track(ev));
   });
+  // gancho del anuncio: el encabezado repite el video que trajo a la persona (utm_content 01-05)
+  const HOOKS = {
+    '01': {k: 'Si te embargaron la cuenta', h1: '¿Te embargaron la cuenta? <em>Esa plata puede cancelar la deuda.</em>',
+           sub: 'Cómo usar los fondos embargados para cancelar y frenar los intereses, qué pagar primero y cómo pedir que levanten el embargo. Paso a paso, sin pagar de más.'},
+    '02': {k: 'Error oculto', h1: 'Pagaste y el juicio sigue. <em>El pago no se imputa solo.</em>',
+           sub: 'Cómo comunicar el pago al agente fiscal para que archiven el expediente y no te traben un embargo sobre una deuda ya pagada. Con modelos listos para presentar.'},
+    '03': {k: 'Lo que casi nadie mira', h1: 'En un juicio fiscal, lo caro no es la deuda. <em>Son los costos.</em>',
+           sub: 'Honorarios del agente fiscal de hasta el 8 %, intereses y cuenta embargada. Qué cuesta cada etapa del juicio y en qué momento conviene pagar para pagar menos.'},
+    '04': {k: 'La ventana de los 5 días', h1: 'Tenés 5 días. <em>Casi nadie los usa a tiempo.</em>',
+           sub: 'Si cancelás dentro del plazo para oponer excepciones, los honorarios del fisco van al mínimo legal (Ley 11.683, art. 98). Qué hacer en esos 5 días.'},
+    '05': {k: 'Caso real de Rentas de Neuquén', h1: '$ 50.669 de deuda. <em>$ 592.050 de costas.</em>',
+           sub: 'Un apremio real por Impuesto Inmobiliario. Por qué una deuda chica no se deja llegar a juicio, y cómo ordenarla si ya llegó.'}
+  };
+  const hk = (q.get('utm_content') || '').replace(/\D/g, '').padStart(2, '0').slice(-2);
+  const H = HOOKS[hk];
+  if (H) {
+    const set = (sel, html) => { const e = document.querySelector(sel); if (e) e.innerHTML = html; };
+    set('[data-hook-k]', H.k); set('[data-hook-h1]', H.h1); set('[data-hook-sub]', H.sub);
+    const v = document.querySelector('[data-hook-video]'), t = document.querySelector('[data-hook-tapa]');
+    if (v) { v.poster = 'video/gancho-' + hk + '.jpg'; v.src = 'video/gancho-' + hk + '.mp4'; v.hidden = false; v.autoplay = true; v.play && v.play().catch(() => {}); if (t) t.hidden = true; }
+    track('ViewContent', {content_category: 'gancho-' + hk});
+  }
   // conservar las UTM al ir al diagnóstico
   if (location.search) $$('a[href="diagnostico/"]').forEach(a => a.href = 'diagnostico/' + location.search);
 })();
