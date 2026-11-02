@@ -141,6 +141,23 @@ footer a{color:var(--ink2)}
   .autor{grid-template-columns:1fr}
   header.nav .btn{margin-left:auto}
 }
+@media (max-width:600px){
+  section{padding-block:40px}
+  .hero{padding-block:22px 34px}
+  .hero .grid{display:flex;flex-direction:column;align-items:stretch;gap:0}
+  .hero .grid>div{display:contents}
+  .hero .grid>div>*{order:4}
+  .hero .grid>div>.eyebrow{order:1;font-size:11px;letter-spacing:.1em}
+  .hero .grid>div>h1{order:2;margin-top:10px!important}
+  .hero .grid>.tapa{order:3;width:150px;height:auto;margin:18px auto 6px}
+  .hero .sub{font-size:17px;margin:14px 0 18px;max-width:none}
+  .solo-grande{display:none}
+  .precio-linea .btn{width:100%}
+  .urgencia a,footer a{display:inline-block;padding:6px 0}
+  .calc .r .v{font-size:30px;white-space:nowrap}
+  .calc input[type=range]{height:44px}
+  video{width:auto;max-width:100%;max-height:68vh;margin-inline:auto}
+}
 </style>
 </head>
 <body>
@@ -156,7 +173,7 @@ footer a{color:var(--ink2)}
   <div>
     <div class="eyebrow">Guía práctica para comerciantes · Edición 2026</div>
     <h1 style="margin-top:14px">Le ponés 40 %.<br>Ganás <em>28,6 %</em>.</h1>
-    <p class="sub"><b style="color:var(--ink)">Sabé en 30 días cuánto ganás de verdad en cada producto</b>, con el Método de los 4 Números y sin saber contabilidad. Es lo que enseña <em>Del Costo al Precio de Venta</em>, con calculadoras que usan tus números.</p>
+    <p class="sub"><b style="color:var(--ink)">Sabé en 30 días cuánto ganás de verdad en cada producto</b>, con el Método de los 4 Números y sin saber contabilidad.<span class="solo-grande"> Es lo que enseña <em>Del Costo al Precio de Venta</em>, con calculadoras que usan tus números.</span></p>
     <div class="precio-linea">
       <a class="btn" data-buy="principal" href="#comprar">Quiero el libro · <span data-precio>USD 10</span> →</a>
       <span class="muted">Antes <span class="tachado"><span data-tachado>USD 24</span></span> <span class="chip">−58 %</span></span>
