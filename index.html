@@ -47,6 +47,10 @@ header.nav .wrap{display:flex;align-items:center;gap:18px;padding-block:12px}
 nav.links{display:flex;gap:18px;margin-left:auto;font-family:var(--m);font-size:13px}
 nav.links a{color:var(--ink2);text-decoration:none}
 nav.links a:hover{color:var(--fluo)}
+[hidden]{display:none!important}
+video{display:block;width:100%;max-width:100%;height:auto;border-radius:10px}
+figure{margin:18px 0 0}
+figcaption{margin-top:8px;font-size:14px;color:var(--ink2)}
 .btn{white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--fluo);color:#0A1411;font-weight:600;font-size:17px;border:0;border-radius:8px;padding:15px 24px;text-decoration:none;cursor:pointer;box-shadow:0 0 0 rgba(94,255,178,0),0 0 34px rgba(94,255,178,.28);transition:transform .15s,box-shadow .15s,background .15s}
 .btn:hover{background:#8AFFC8;transform:translateY(-1px);box-shadow:0 0 44px rgba(94,255,178,.42)}
 .btn.sm{font-size:14px;padding:9px 14px}
@@ -152,7 +156,7 @@ footer a{color:var(--ink2)}
   <div>
     <div class="eyebrow">Guía práctica para comerciantes · Edición 2026</div>
     <h1 style="margin-top:14px">Le ponés 40 %.<br>Ganás <em>28,6 %</em>.</h1>
-    <p class="sub"><b style="color:var(--ink)">Del Costo al Precio de Venta</b> es la guía para calcular precios que dejen ganancia de verdad y saber cuánto vender por día para cubrir el mes. Con calculadoras que usan tus números.</p>
+    <p class="sub"><b style="color:var(--ink)">Sabé en 30 días cuánto ganás de verdad en cada producto</b>, con el Método de los 4 Números y sin saber contabilidad. Es lo que enseña <em>Del Costo al Precio de Venta</em>, con calculadoras que usan tus números.</p>
     <div class="precio-linea">
       <a class="btn" data-buy="principal" href="#comprar">Quiero el libro · <span data-precio>USD 10</span> →</a>
       <span class="muted">Antes <span class="tachado"><span data-tachado>USD 24</span></span> <span class="chip">−58 %</span></span>
@@ -162,15 +166,6 @@ footer a{color:var(--ink2)}
     <p class="urgencia"><a href="arrepentimiento.html">Botón de arrepentimiento</a> · <a href="terminos.html">Términos y condiciones</a></p>
   </div>
   <img class="tapa" src="tapa.jpg" width="640" height="1024" alt="Tapa del libro Del Costo al Precio de Venta: curva de ingresos y costos con el punto de equilibrio">
-</div></section>
-
-<section id="videos"><div class="wrap">
-  <div class="eyebrow">Miralo en un minuto</div>
-  <h2 style="margin-top:10px">Dos historias cortas sobre lo que el libro te enseña a evitar</h2>
-  <div class="videos">
-    <figure><video controls playsinline preload="none" poster="video/gondola-vacia.jpg" src="video/gondola-vacia.mp4" data-video="gondola"></video><figcaption>La góndola vacía · 56 s. Bananas y frutillas: vender mucho y quedarse sin plata para reponer.</figcaption></figure>
-    <figure><video controls playsinline preload="none" poster="video/punto-de-equilibrio.jpg" src="video/punto-de-equilibrio.mp4" data-video="equilibrio"></video><figcaption>El punto de equilibrio · 48 s. Con $ 5 M de gastos fijos y 50 % de margen, hay que vender $ 10 M al mes.</figcaption></figure>
-  </div>
 </div></section>
 
 <section id="calculadora"><div class="wrap dos">
@@ -189,36 +184,6 @@ footer a{color:var(--ink2)}
     </div>
     <p class="lectura" id="lectura">De cada $ 1.000 que vendés, te quedan $ 286 antes de pagar los gastos fijos.</p>
     <div class="formula">margen real = markup ÷ (1 + markup)<br>Precio = Costo ÷ (1 − margen)</div>
-  </div>
-</div></section>
-
-<section id="aprender"><div class="wrap">
-  <div class="eyebrow reveal">Después de leerlo</div>
-  <h2 class="reveal" style="margin-top:10px">Qué vas a poder hacer con <em>tus números</em></h2>
-  <div class="seis">
-    <div class="reveal"><b>1</b><span>Calcular el margen real de cada producto, no el markup.</span></div>
-    <div class="reveal"><b>2</b><span>Separar costos fijos de variables sin dejar gastos ocultos afuera.</span></div>
-    <div class="reveal"><b>3</b><span>Conocer tu punto de equilibrio mensual, diario y en tickets.</span></div>
-    <div class="reveal"><b>4</b><span>Fijar precios por margen objetivo, con una factura real de bebidas y fiambres.</span></div>
-    <div class="reveal"><b>5</b><span>Saber cuánto vender para ganar lo que te propusiste.</span></div>
-    <div class="reveal"><b>6</b><span>Calcular cuándo recuperás la inversión, con una curva realista.</span></div>
-  </div>
-</div></section>
-
-<section id="indice"><div class="wrap">
-  <div class="eyebrow reveal">Adentro del libro</div>
-  <h2 class="reveal" style="margin-top:10px">14 capítulos cortos, <em>4 partes</em></h2>
-  <div class="partes">
-    <div class="parte reveal"><h3>I · Antes de abrir</h3><ol><li><span>0</span>El error que hace perder dinero</li><li><span>1</span>Antes de abrir tu negocio</li><li><span>2</span>Cuánto necesitás invertir</li></ol></div>
-    <div class="parte reveal"><h3>II · Los cuatro números</h3><ol><li><span>3</span>Costos fijos y variables</li><li><span>4</span>Punto de equilibrio</li><li><span>5</span>El precio de venta correcto</li><li><span>6</span>Meta de ganancia</li><li><span>7</span>Recuperar la inversión</li></ol></div>
-    <div class="parte reveal"><h3>III · Gestionar cada mes</h3><ol><li><span>8</span>Tablero de control</li><li><span>9</span>Palancas de rentabilidad</li><li><span>10</span>Marketing de barrio</li></ol></div>
-    <div class="parte reveal"><h3>IV · Escalar y cumplir</h3><ol><li><span>11</span>Productos digitales</li><li><span>12</span>Impuestos sin sorpresas</li><li><span>13</span>Plan de 30 días</li></ol></div>
-  </div>
-  <div class="incluye">
-    <div class="reveal"><b>20 calculadoras</b>La versión interactiva recalcula todo el libro con tus números.</div>
-    <div class="reveal"><b>Plantillas</b>Costos, precios, metas, tablero mensual y plan de mejora.</div>
-    <div class="reveal"><b>Cartel de la caja</b>Tu meta diaria impresa, al lado de la registradora.</div>
-    <div class="reveal"><b>Plan de 30 días</b>Una tarea por día para aplicarlo en tu negocio.</div>
   </div>
 </div></section>
 
@@ -241,6 +206,58 @@ footer a{color:var(--ink2)}
   </div>
 </div></section>
 
+<section id="aprender"><div class="wrap">
+  <div class="eyebrow reveal">Después de leerlo</div>
+  <h2 class="reveal" style="margin-top:10px">Qué vas a poder hacer con <em>tus números</em></h2>
+  <div class="seis">
+    <div class="reveal"><b>1</b><span>Calcular el margen real de cada producto, no el markup.</span></div>
+    <div class="reveal"><b>2</b><span>Separar costos fijos de variables sin dejar gastos ocultos afuera.</span></div>
+    <div class="reveal"><b>3</b><span>Conocer tu punto de equilibrio mensual, diario y en tickets.</span></div>
+    <div class="reveal"><b>4</b><span>Fijar precios por margen objetivo, con una factura real de bebidas y fiambres.</span></div>
+    <div class="reveal"><b>5</b><span>Saber cuánto vender para ganar lo que te propusiste.</span></div>
+    <div class="reveal"><b>6</b><span>Calcular cuándo recuperás la inversión, con una curva realista.</span></div>
+  </div>
+</div></section>
+
+<section id="metodo"><div class="wrap">
+  <div class="eyebrow reveal">El método</div>
+  <h2 class="reveal" style="margin-top:10px">El Método de los <em>4 Números</em></h2>
+  <p class="muted reveal">Cuatro cuentas para dejar de poner precios a ojo. Cada una viene con su ejemplo y su calculadora.</p>
+  <div class="incluye">
+    <div class="reveal"><b>1 · Costos</b>Cuánto te cuesta de verdad cada producto y cada mes, sin gastos ocultos afuera.</div>
+    <div class="reveal"><b>2 · Equilibrio</b>Cuánto vender por mes, por día y en tickets para cubrir los gastos.</div>
+    <div class="reveal"><b>3 · Precio</b>El precio que deja el margen que buscás, no un porcentaje a ojo.</div>
+    <div class="reveal"><b>4 · Recuperación</b>Cuándo recuperás lo que invertiste, con una curva realista.</div>
+  </div>
+</div></section>
+
+<section id="videos"><div class="wrap">
+  <div class="eyebrow">Miralo en un minuto</div>
+  <h2 style="margin-top:10px">Vender mucho y quedarte sin plata para reponer</h2>
+  <div class="videos" style="max-width:520px">
+    <figure><video controls playsinline preload="none" poster="video/gondola-vacia.jpg" src="video/gondola-vacia.mp4" data-video="gondola"></video><figcaption>La góndola vacía · 56 s. Bananas y frutillas: vender mucho y quedarse sin plata para reponer.</figcaption></figure>
+  </div>
+</div></section>
+
+<section id="indice"><div class="wrap">
+  <div class="eyebrow reveal">Adentro del libro</div>
+  <h2 class="reveal" style="margin-top:10px">Qué recibís con <em>el libro</em></h2>
+  <div class="incluye">
+    <div class="reveal"><b>20 calculadoras</b>La versión interactiva recalcula todo el libro con tus números.</div>
+    <div class="reveal"><b>Plantillas</b>Costos, precios, metas, tablero mensual y plan de mejora.</div>
+    <div class="reveal"><b>Cartel de la caja</b>Tu meta diaria impresa, al lado de la registradora.</div>
+    <div class="reveal"><b>Plan de 30 días</b>Una tarea por día para aplicarlo en tu negocio.</div>
+  </div>
+  <details style="margin-top:22px"><summary>Ver el índice: 14 capítulos cortos, 4 partes</summary>
+  <div class="partes">
+    <div class="parte reveal"><h3>I · Antes de abrir</h3><ol><li><span>0</span>El error que hace perder dinero</li><li><span>1</span>Antes de abrir tu negocio</li><li><span>2</span>Cuánto necesitás invertir</li></ol></div>
+    <div class="parte reveal"><h3>II · Los cuatro números</h3><ol><li><span>3</span>Costos fijos y variables</li><li><span>4</span>Punto de equilibrio</li><li><span>5</span>El precio de venta correcto</li><li><span>6</span>Meta de ganancia</li><li><span>7</span>Recuperar la inversión</li></ol></div>
+    <div class="parte reveal"><h3>III · Gestionar cada mes</h3><ol><li><span>8</span>Tablero de control</li><li><span>9</span>Palancas de rentabilidad</li><li><span>10</span>Marketing de barrio</li></ol></div>
+    <div class="parte reveal"><h3>IV · Escalar y cumplir</h3><ol><li><span>11</span>Productos digitales</li><li><span>12</span>Impuestos sin sorpresas</li><li><span>13</span>Plan de 30 días</li></ol></div>
+  </div>
+  </details>
+</div></section>
+
 <section id="autor"><div class="wrap autor">
   <div class="mono-foto reveal" aria-hidden="true">JM</div>
   <div class="reveal">
@@ -250,33 +267,10 @@ footer a{color:var(--ink2)}
   </div>
 </div></section>
 
-<section id="comunidad"><div class="wrap">
-  <div class="eyebrow reveal">Gratuita y abierta</div>
-  <h2 class="reveal" style="margin-top:10px">Comunidad de Emprendedores <em>Montenegro &amp; Asociados</em></h2>
-  <p class="muted reveal">Un espacio gratuito por WhatsApp para comerciantes y emprendedores. No hace falta comprar el libro para participar.</p>
-  <ul class="lista reveal"><li>Actualizaciones cuando cambien impuestos o escalas</li><li>Plantillas nuevas de costos, flujo de fondos y stock</li><li>Casos reales de comerciantes de la región</li><li>Encuentros periódicos y el "número de la semana"</li></ul>
-  <p class="muted reveal" id="comunidadTexto">Estamos abriendo la comunidad. Escribinos por WhatsApp y te sumamos apenas esté lista.</p>
-  <p class="reveal"><a class="btn ghost" id="comunidadBtn" hidden target="_blank" rel="noopener">Entrar a la comunidad</a></p>
-</div></section>
-
 <section id="testimonios" hidden><div class="wrap">
   <div class="eyebrow">Lo que dicen los comerciantes</div>
   <h2 style="margin-top:10px">Testimonios</h2>
   <div class="partes" id="testimoniosGrid"></div>
-</div></section>
-
-<section id="gratis"><div class="wrap dos">
-  <div class="reveal">
-    <div class="eyebrow">Probalo gratis</div>
-    <h2 style="margin-top:10px">¿Todavía no comprás? Llevate la <em>calculadora</em></h2>
-    <p class="muted">Poné tu costo y el margen que querés ganar: te da el precio correcto y tu punto de equilibrio por día. Sin registrarte.</p>
-    <p class="muted">Y si nos escribís por WhatsApp, te mandamos gratis el <b style="color:var(--ink)">cartel de la caja</b> para imprimir con tu meta diaria.</p>
-  </div>
-  <div class="calc reveal" style="display:flex;flex-direction:column;gap:12px">
-    <a class="btn" href="calculadora/" data-utm>Abrir la calculadora gratis →</a>
-    <a class="btn ghost" id="waLead" href="#" target="_blank" rel="noopener">Pedir el cartel de la caja por WhatsApp</a>
-    <p class="urgencia" id="waLeadLegal" style="margin:0">Al escribirnos aceptás que te contactemos por WhatsApp con material del libro. Podés pedir la baja cuando quieras. <a href="privacidad.html">Privacidad</a>.</p>
-  </div>
 </div></section>
 
 <section id="comprar"><div class="wrap">
@@ -303,6 +297,29 @@ footer a{color:var(--ink2)}
   <details><summary>¿La comunidad tiene costo?</summary><p>No. La Comunidad de Emprendedores Montenegro &amp; Asociados es gratuita y abierta a cualquier comerciante, haya comprado o no el libro.</p></details>
   <details><summary>¿Puedo pedir factura?</summary><p>Sí. La plataforma de pago emite el comprobante de la compra. Si necesitás factura a nombre de tu negocio, escribinos desde www.myaestudio.com después de comprar.</p></details>
   <details><summary>¿Qué pasa si no me sirve?</summary><p>Tenés 7 días de garantía. Si no era lo que esperabas, pedís el reembolso desde la misma plataforma y se te devuelve el total.</p></details>
+</div></section>
+
+<section id="gratis"><div class="wrap dos">
+  <div class="reveal">
+    <div class="eyebrow">Probalo gratis</div>
+    <h2 style="margin-top:10px">¿Todavía no comprás? Llevate la <em>calculadora</em></h2>
+    <p class="muted">Poné tu costo y el margen que querés ganar: te da el precio correcto y tu punto de equilibrio por día. Sin registrarte.</p>
+    <p class="muted">Y si nos escribís por WhatsApp, te mandamos gratis el <b style="color:var(--ink)">cartel de la caja</b> para imprimir con tu meta diaria.</p>
+  </div>
+  <div class="calc reveal" style="display:flex;flex-direction:column;gap:12px">
+    <a class="btn" href="calculadora/" data-utm>Abrir la calculadora gratis →</a>
+    <a class="btn ghost" id="waLead" href="#" target="_blank" rel="noopener">Pedir el cartel de la caja por WhatsApp</a>
+    <p class="urgencia" id="waLeadLegal" style="margin:0">Al escribirnos aceptás que te contactemos por WhatsApp con material del libro. Podés pedir la baja cuando quieras. <a href="privacidad.html">Privacidad</a>.</p>
+  </div>
+</div></section>
+
+<section id="comunidad"><div class="wrap">
+  <div class="eyebrow reveal">Gratuita y abierta</div>
+  <h2 class="reveal" style="margin-top:10px">Comunidad de Emprendedores <em>Montenegro &amp; Asociados</em></h2>
+  <p class="muted reveal">Un espacio gratuito por WhatsApp para comerciantes y emprendedores. No hace falta comprar el libro para participar.</p>
+  <ul class="lista reveal"><li>Actualizaciones cuando cambien impuestos o escalas</li><li>Plantillas nuevas de costos, flujo de fondos y stock</li><li>Casos reales de comerciantes de la región</li><li>Encuentros periódicos y el "número de la semana"</li></ul>
+  <p class="muted reveal" id="comunidadTexto">Estamos abriendo la comunidad. Escribinos por WhatsApp y te sumamos apenas esté lista.</p>
+  <p class="reveal"><a class="btn ghost" id="comunidadBtn" hidden target="_blank" rel="noopener">Entrar a la comunidad</a></p>
 </div></section>
 </main>
 
@@ -347,6 +364,8 @@ const CONFIG = window.CONFIG;
     a.href = url;
     // Con dos checkouts, el botón principal pregunta la moneda cada vez (así se puede cambiar de opción)
     if (!(tipo === 'principal' && CONFIG.impultiendaUrl && CONFIG.hotmartUrl)) return a.addEventListener('click', () => track('InitiateCheckout', {destino: tipo}));
+    // Anuncios de Argentina (?pais=ar): directo a Impultienda, sin preguntar la moneda
+    if (q.get('pais') === 'ar') return a.addEventListener('click', () => track('InitiateCheckout', {destino:'impultienda'}));
     a.addEventListener('click', e => { e.preventDefault(); document.getElementById('elegirPago').showModal(); });
   });
   // píxeles (solo si hay ID)
