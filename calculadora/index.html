@@ -435,7 +435,6 @@ table.t td{color:var(--ink)}
   // ---- Captura de contacto ----
   const q = new URLSearchParams(location.search);
   function destrabar(){ $('informe').classList.remove('bloqueado'); $('puerta').remove(); $('velo').removeAttribute('aria-hidden'); try { sessionStorage.setItem('calcInforme', '1'); } catch(_){} }
-  try { if (sessionStorage.getItem('calcInforme') === '1') destrabar(); } catch(_){}
   $('fLead').addEventListener('submit', e => {
     e.preventDefault();
     const nombre = $('lNombre').value.trim(), wa = $('lWa').value.replace(/[^\d+]/g,''), mail = $('lMail').value.trim(), err = $('lErr');
@@ -447,7 +446,8 @@ table.t td{color:var(--ink)}
       iva: S.t.iva ? 'RI ' + (S.t.iva*100) + ' %' : 'Monotributo', margen_real: Math.round(S.mr*1000)/10, equilibrio_mensual: Math.round(S.peD || S.pe),
       equilibrio_diario: Math.round(S.dia), consentimiento: 'Ley 25.326 · ' + $('lOk').closest('label').innerText.trim(),
       utm_source: q.get('utm_source') || '', utm_campaign: q.get('utm_campaign') || '', utm_content: q.get('utm_content') || '', origen: 'calculadora' };
-    if (C.leadEndpoint) { try { fetch(C.leadEndpoint, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body: JSON.stringify(lead)}); } catch(_){} }
+    // A la hoja: el apóstrofo hace que Sheets guarde el teléfono como texto (no pierde el 0 inicial)
+    if (C.leadEndpoint) { try { fetch(C.leadEndpoint, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body: JSON.stringify(Object.assign({}, lead, {whatsapp: wa ? "'" + wa : ''}))}); } catch(_){} }
     try { if (window.track) track('Lead', {content_category: 'calculadora'}); } catch(_){}
     $('pDatos').textContent = nombre + (lead.rubro ? ' · ' + lead.rubro : '') + ' · ' + lead.iva;
     S.lead = lead;
@@ -455,6 +455,8 @@ table.t td{color:var(--ink)}
     $('informe').scrollIntoView({behavior: 'smooth', block: 'start'});
   });
   $('pdf').addEventListener('click', () => window.print());
+  // Si ya lo destrabó en esta pestaña, se muestra abierto (después de enganchar el formulario)
+  try { if (sessionStorage.getItem('calcInforme') === '1') destrabar(); } catch(_){}
 
   // WhatsApp del cartel (y del informe) al número del estudio
   const waC = $('waCartel');

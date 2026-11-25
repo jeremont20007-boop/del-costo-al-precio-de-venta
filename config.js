@@ -20,7 +20,7 @@ window.CONFIG = {
   // Calculadora gratis (/calculadora/)
   precioPlanilla: "5.990",         // planilla que se suma en el checkout del libro (order bump)
   empleadoUrl: "https://del-costo-al-precio.impultienda.ar/checkout/cuanto-cuesta-empleado",   // libro «Cuánto te cuesta un empleado»
-  leadEndpoint: "",                // URL de un Google Apps Script (doPost) que guarda los contactos en una hoja; vacío = solo WhatsApp
+  leadEndpoint: "https://script.google.com/macros/s/AKfycbzg2u2JgUDYwjnSFP6mCiC-XV9OGTMEzDQPZnmdM5shQd8q47sRnLB-e6zhElRGjzghMA/exec",   // Apps Script de la hoja «Contactos · Calculadora Del Costo al Precio» (Drive de economia@myaestudio.com); vacío = solo WhatsApp
   // Comisiones orientativas por medio de cobro (% sobre el precio final). Cada comercio puede cambiarlas en pantalla.
   comisiones: [
     {id:"efectivo", nombre:"Efectivo o transferencia", pct:0},
