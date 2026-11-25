@@ -17,6 +17,18 @@ window.CONFIG = {
   leadMensaje: "Hola, vengo de la calculadora de precios. Quiero el cartel de la caja gratis.",
   contactoEmail: "",               // mail público para consultas y revocaciones; vacío = solo WhatsApp y web
   communityWhatsAppUrl: "",        // enlace de invitación a la comunidad; vacío = no muestra botón
+  // Calculadora gratis (/calculadora/)
+  precioPlanilla: "5.990",         // planilla que se suma en el checkout del libro (order bump)
+  empleadoUrl: "https://del-costo-al-precio.impultienda.ar/checkout/cuanto-cuesta-empleado",   // libro «Cuánto te cuesta un empleado»
+  leadEndpoint: "",                // URL de un Google Apps Script (doPost) que guarda los contactos en una hoja; vacío = solo WhatsApp
+  // Comisiones orientativas por medio de cobro (% sobre el precio final). Cada comercio puede cambiarlas en pantalla.
+  comisiones: [
+    {id:"efectivo", nombre:"Efectivo o transferencia", pct:0},
+    {id:"debito",   nombre:"Tarjeta de débito",        pct:1.5},
+    {id:"credito",  nombre:"Tarjeta de crédito (1 pago)", pct:3.5},
+    {id:"mpqr",     nombre:"Mercado Pago QR",          pct:1},
+    {id:"mplink",   nombre:"Mercado Pago link de pago", pct:4.5}
+  ],
   // Medición (vacío = no carga nada)
   metaPixelId: "1944695516199310",
   tiktokPixelId: "",
